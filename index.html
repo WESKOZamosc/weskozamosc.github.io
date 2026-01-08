@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>WESKO Zamość – Rolety i Żaluzje</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="WESKO Zamość – profesjonalny montaż rolet i żaluzji. Szybko, solidnie i estetycznie." />
+  <meta name="description" content="WESKO Zamość – profesjonalny montaż rolet i żaluzji. Zamość i okolice." />
 
   <style>
     :root{
@@ -13,157 +13,175 @@
       --white:#ffffff;
       --light:#f4f4f4;
 
-      /* Subtelne złoto (gradient) */
-      --gold1:#d8c27a;
+      /* ZŁOTO – eleganckie */
+      --gold1:#e6d28a;
       --gold2:#c9a24d;
-      --gold3:#b88a2a;
+      --gold3:#a67c1b;
 
-      --shadow: 0 10px 25px rgba(0,0,0,.08);
-      --radius: 14px;
+      --radius:14px;
+      --shadow:0 12px 30px rgba(0,0,0,.1);
     }
 
-    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial, Helvetica, sans-serif;}
-    body{background:var(--light);color:#1e1e1e;line-height:1.6;}
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      font-family:Arial, Helvetica, sans-serif;
+    }
 
+    body{
+      background:var(--light);
+      color:#1e1e1e;
+      line-height:1.6;
+    }
+
+    /* HEADER */
     header{
-      color:var(--white);
-      padding:64px 20px;
+      padding:70px 20px;
       text-align:center;
+      color:var(--white);
       background:
-        radial-gradient(1000px 400px at 20% 10%, rgba(201,162,77,.18), transparent 60%),
-        radial-gradient(900px 420px at 80% 30%, rgba(184,138,42,.16), transparent 55%),
+        radial-gradient(900px 400px at 15% 10%, rgba(201,162,77,.18), transparent 60%),
+        radial-gradient(800px 420px at 85% 25%, rgba(166,124,27,.18), transparent 55%),
         linear-gradient(135deg, var(--dark), var(--gray));
     }
 
-    .brand{
+    .logo{
       font-size:3rem;
-      letter-spacing:2px;
-      display:inline-block;
+      letter-spacing:3px;
       line-height:1.05;
     }
 
-    /* Złoty gradient na "WESKO" */
-    .brand .gold{
-      background: linear-gradient(90deg, var(--gold1), var(--gold2), var(--gold3));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 0 rgba(0,0,0,0);
+    .logo .gold{
+      background:linear-gradient(90deg,var(--gold1),var(--gold2),var(--gold3));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
     }
 
     header p{
-      margin-top:14px;
+      margin-top:16px;
       font-size:1.15rem;
-      opacity:.92;
+      opacity:.9;
     }
 
-    .top-actions{
-      margin-top:18px;
+    .actions{
+      margin-top:22px;
       display:flex;
-      gap:10px;
       justify-content:center;
+      gap:12px;
       flex-wrap:wrap;
     }
 
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 16px;
+      padding:12px 18px;
       border-radius:999px;
       text-decoration:none;
       font-weight:700;
-      border:1px solid rgba(255,255,255,.18);
       color:var(--white);
-      background: rgba(255,255,255,.06);
-      backdrop-filter: blur(8px);
-      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+      border:1px solid rgba(255,255,255,.25);
+      background:rgba(255,255,255,.08);
+      backdrop-filter:blur(8px);
+      transition:.2s;
     }
-    .btn:hover{transform: translateY(-2px); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.26);}
+
+    .btn:hover{
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.14);
+    }
+
     .btn.gold{
-      border:1px solid rgba(201,162,77,.55);
-      background: linear-gradient(90deg, rgba(216,194,122,.18), rgba(201,162,77,.14), rgba(184,138,42,.16));
+      color:#111;
+      border:none;
+      background:linear-gradient(90deg,var(--gold1),var(--gold2),var(--gold3));
+      box-shadow:0 10px 25px rgba(0,0,0,.25);
     }
 
     section{
-      padding:60px 20px;
       max-width:1100px;
       margin:auto;
+      padding:70px 20px;
     }
 
     h2{
       text-align:center;
+      font-size:2.2rem;
       margin-bottom:40px;
-      font-size:2.15rem;
-      color:#171717;
     }
 
     .about{
-      text-align:center;
-      font-size:1.1rem;
       max-width:820px;
       margin:auto;
+      text-align:center;
+      font-size:1.1rem;
     }
 
+    /* OFERTA */
     .offer{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-      gap:22px;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:24px;
     }
 
     .card{
       background:var(--white);
+      padding:32px;
       border-radius:var(--radius);
-      padding:30px;
-      text-align:center;
       box-shadow:var(--shadow);
-      transition: transform .25s ease;
-      border: 1px solid rgba(0,0,0,.06);
+      text-align:center;
+      transition:.25s;
     }
-    .card:hover{transform: translateY(-6px);}
+
+    .card:hover{
+      transform:translateY(-6px);
+    }
 
     .card h3{
-      margin-bottom:12px;
-      font-size:1.25rem;
-      background: linear-gradient(90deg, var(--gold1), var(--gold2), var(--gold3));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      margin-bottom:14px;
+      font-size:1.3rem;
+      background:linear-gradient(90deg,var(--gold1),var(--gold2),var(--gold3));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
     }
 
-    .contact-wrap{
+    /* KONTAKT */
+    .contact-grid{
       display:grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap:22px;
-      align-items:stretch;
+      grid-template-columns:1fr 1.1fr;
+      gap:24px;
     }
 
     .contact{
-      background: linear-gradient(135deg, #101010, #1a1a1a);
+      background:linear-gradient(135deg,#0f0f0f,#1a1a1a);
       color:var(--white);
+      padding:36px;
       border-radius:var(--radius);
-      padding:34px;
-      box-shadow: 0 14px 40px rgba(0,0,0,.16);
-      border:1px solid rgba(201,162,77,.22);
+      box-shadow:0 18px 45px rgba(0,0,0,.2);
       position:relative;
       overflow:hidden;
     }
 
-    .contact:before{
+    .contact::before{
       content:"";
-      position:absolute; inset:-2px;
+      position:absolute;
+      inset:-2px;
       background:
-        radial-gradient(600px 240px at 10% 10%, rgba(216,194,122,.20), transparent 55%),
-        radial-gradient(520px 240px at 90% 30%, rgba(201,162,77,.18), transparent 60%);
-      pointer-events:none;
-      opacity:.9;
+        radial-gradient(500px 240px at 10% 10%, rgba(201,162,77,.25), transparent 60%),
+        radial-gradient(500px 240px at 90% 30%, rgba(166,124,27,.2), transparent 60%);
     }
 
-    .contact .inner{position:relative;}
-    .contact p{margin:10px 0; font-size:1.05rem;}
+    .contact-inner{
+      position:relative;
+    }
+
+    .contact p{
+      margin:12px 0;
+      font-size:1.05rem;
+    }
+
     .contact strong{
-      background: linear-gradient(90deg, var(--gold1), var(--gold2), var(--gold3));
+      background:linear-gradient(90deg,var(--gold1),var(--gold2),var(--gold3));
       -webkit-background-clip:text;
       background-clip:text;
       color:transparent;
@@ -172,80 +190,75 @@
     .contact a{
       color:var(--white);
       text-decoration:none;
-      border-bottom:1px dashed rgba(255,255,255,.35);
+      border-bottom:1px dashed rgba(255,255,255,.4);
     }
-    .contact a:hover{border-bottom-color: rgba(216,194,122,.75);}
 
     .map{
-      background:var(--white);
       border-radius:var(--radius);
       overflow:hidden;
       box-shadow:var(--shadow);
-      border: 1px solid rgba(0,0,0,.06);
-      min-height: 320px;
+      background:#fff;
     }
 
     .map iframe{
       width:100%;
       height:100%;
-      min-height: 320px;
+      min-height:340px;
       border:0;
-      display:block;
     }
 
     footer{
-      background:#0f0f0f;
+      background:#0e0e0e;
       color:#aaa;
       text-align:center;
-      padding:20px;
+      padding:22px;
       font-size:.9rem;
     }
 
-    /* Floating "Zadzwoń" na mobile */
+    /* MOBILE CALL */
     .call-fab{
+      display:none;
       position:fixed;
       right:16px;
       bottom:16px;
-      z-index:999;
-      display:none;
-      padding:14px 16px;
+      padding:14px 18px;
       border-radius:999px;
-      text-decoration:none;
       font-weight:800;
       color:#111;
-      background: linear-gradient(90deg, var(--gold1), var(--gold2), var(--gold3));
-      box-shadow: 0 14px 35px rgba(0,0,0,.25);
-      border: 1px solid rgba(0,0,0,.08);
+      background:linear-gradient(90deg,var(--gold1),var(--gold2),var(--gold3));
+      box-shadow:0 12px 30px rgba(0,0,0,.3);
+      text-decoration:none;
+      z-index:999;
     }
 
-    @media (max-width: 900px){
-      .contact-wrap{grid-template-columns: 1fr;}
+    @media(max-width:900px){
+      .contact-grid{grid-template-columns:1fr;}
     }
 
-    @media (max-width: 600px){
-      .brand{font-size:2.25rem;}
-      .call-fab{display:inline-flex;}
+    @media(max-width:600px){
+      .logo{font-size:2.3rem;}
+      .call-fab{display:block;}
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1 class="brand"><span class="gold">WESKO</span> Zamość</h1>
+  <h1 class="logo"><span class="gold">WESKO</span> Zamość</h1>
   <p>Montaż rolet i żaluzji – solidnie i estetycznie</p>
 
-  <div class="top-actions" aria-label="Szybkie akcje">
-    <a class="btn gold" href="tel:+48663438606">📞 Zadzwoń</a>
-    <a class="btn" href="#kontakt">✉️ Kontakt</a>
-    <a class="btn" href="#mapa">📍 Mapa</a>
+  <div class="actions">
+    <a href="tel:+48663438606" class="btn gold">📞 Zadzwoń</a>
+    <a href="#kontakt" class="btn">✉️ Kontakt</a>
+    <a href="#mapa" class="btn">📍 Mapa</a>
   </div>
 </header>
 
 <section>
   <h2>O nas</h2>
   <p class="about">
-    Jesteśmy firmą z Zamościa specjalizującą się w profesjonalnym montażu rolet oraz żaluzji.
-    Stawiamy na jakość, precyzję i zadowolenie klienta.
+    Jesteśmy firmą z Zamościa zajmującą się profesjonalnym montażem rolet i żaluzji.
+    Stawiamy na estetykę, solidność oraz uczciwe podejście do klienta.
   </p>
 </section>
 
@@ -254,15 +267,15 @@
   <div class="offer">
     <div class="card">
       <h3>Rolety</h3>
-      <p>Rolety wewnętrzne i zewnętrzne dopasowane do Twoich potrzeb.</p>
+      <p>Rolety wewnętrzne i zewnętrzne dopasowane do Twojego wnętrza.</p>
     </div>
     <div class="card">
       <h3>Żaluzje</h3>
-      <p>Nowoczesne i klasyczne żaluzje – estetyka i funkcjonalność.</p>
+      <p>Nowoczesne i klasyczne rozwiązania do domów i biur.</p>
     </div>
     <div class="card">
       <h3>Montaż</h3>
-      <p>Profesjonalny montaż z dbałością o każdy detal.</p>
+      <p>Precyzyjny montaż z dbałością o detale.</p>
     </div>
   </div>
 </section>
@@ -270,24 +283,22 @@
 <section id="kontakt">
   <h2>Kontakt</h2>
 
-  <div class="contact-wrap">
+  <div class="contact-grid">
     <div class="contact">
-      <div class="inner">
+      <div class="contact-inner">
         <p><strong>Telefon:</strong> <a href="tel:+48663438606">663 438 606</a></p>
         <p><strong>E-mail:</strong> <a href="mailto:weskozamosc@gmail.com">weskozamosc@gmail.com</a></p>
         <p><strong>Obszar:</strong> Zamość i okolice</p>
-        <p style="opacity:.9;margin-top:14px;">
-          Zadzwoń lub napisz – oddzwonimy i doradzimy najlepsze rozwiązanie.
+        <p style="opacity:.85;margin-top:14px">
+          Skontaktuj się z nami – doradzimy i umówimy termin.
         </p>
       </div>
     </div>
 
-    <div class="map" id="mapa" aria-label="Mapa – Zamość">
+    <div class="map" id="mapa">
       <iframe
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps?q=Zamo%C5%9B%C4%87&output=embed"
-        title="Google Maps – Zamość">
+        src="https://www.google.com/maps?q=Zamo%C5%9B%C4%87&output=embed">
       </iframe>
     </div>
   </div>
@@ -297,7 +308,7 @@
   © 2026 WESKO Zamość – Wszystkie prawa zastrzeżone
 </footer>
 
-<a class="call-fab" href="tel:+48663438606" aria-label="Zadzwoń do WESKO">📞 Zadzwoń</a>
+<a href="tel:+48663438606" class="call-fab">📞 Zadzwoń</a>
 
 </body>
 </html>
