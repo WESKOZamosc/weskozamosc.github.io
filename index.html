@@ -4,7 +4,15 @@
   <meta charset="UTF-8" />
   <title>WESKO Zamość – Rolety i Żaluzje</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="WESKO Zamość – profesjonalny montaż rolet i żaluzji. Lubelska 36c, 22-400 Zamość." />
+  <meta name="description" content="WESKO Zamość – profesjonalny montaż rolet i żaluzji. Firma założona w 2026 roku. Lubelska 36c, 22-400 Zamość." />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#2b261b">
 
   <!-- Premium fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,10 +21,9 @@
 
   <style>
     :root{
-      /* TŁO 1:1 jak na screenie (ciepły, ciemny) */
-      --bg-top:#2b261b;  /* ~ [43,38,27] */
+      --bg-top:#2b261b;
       --bg-mid:#23201a;
-      --bg-bot:#171717;  /* ~ [23-26] */
+      --bg-bot:#171717;
 
       --text:#f2f2f2;
       --muted:rgba(242,242,242,.78);
@@ -25,14 +32,13 @@
       --panel2:rgba(255,255,255,.045);
       --border:rgba(255,255,255,.10);
 
-      /* ZŁOTO premium */
       --gold1:#e6d28a;
       --gold2:#c9a24d;
       --gold3:#a67c1b;
 
       --radius:18px;
-      --shadow:0 18px 55px rgba(0,0,0,.55);
       --shadowSoft:0 12px 30px rgba(0,0,0,.35);
+      --shadow:0 18px 55px rgba(0,0,0,.55);
 
       --max:1120px;
     }
@@ -40,11 +46,9 @@
     *{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{
-      font-family: Manrope, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family: Manrope, Inter, system-ui, Arial, sans-serif;
       color:var(--text);
       line-height:1.65;
-
-      /* Cała strona w tym kolorze (jak screen) */
       background:
         radial-gradient(900px 420px at 20% 12%, rgba(201,162,77,.10), transparent 62%),
         radial-gradient(900px 420px at 85% 30%, rgba(166,124,27,.09), transparent 60%),
@@ -52,56 +56,39 @@
       min-height:100vh;
     }
 
-    a{color:inherit;}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 20px;}
+    a{color:inherit}
 
-    /* HEADER */
     header{
       padding:78px 0 44px;
       border-bottom:1px solid rgba(255,255,255,.10);
-    }
-
-    .brand{
       text-align:center;
     }
 
-    .brand .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
+    .kicker{
+      display:inline-block;
       padding:8px 14px;
       border-radius:999px;
       background:rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.12);
-      color:rgba(242,242,242,.84);
       font-weight:700;
-      letter-spacing:.3px;
       font-size:.92rem;
+      color:rgba(242,242,242,.85);
     }
 
-    h1{
-      margin-top:16px;
-      text-align:center;
-      font-size:3.1rem;
-      letter-spacing:2.2px;
-      line-height:1.05;
-      text-transform:uppercase;
-      font-weight:800;
-    }
-
-    .gold-text{
-      background:linear-gradient(90deg, var(--gold1), var(--gold2), var(--gold3));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
+    .logo-img{
+      display:block;
+      margin:22px auto 14px;
+      max-width:340px;
+      width:90%;
+      filter:drop-shadow(0 18px 45px rgba(0,0,0,.55));
     }
 
     .lead{
-      margin-top:14px;
-      text-align:center;
-      color:var(--muted);
+      margin-top:10px;
       font-size:1.08rem;
-      font-weight:500;
+      font-weight:600;
+      color:var(--muted);
     }
 
     .actions{
@@ -113,61 +100,28 @@
     }
 
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
       padding:12px 18px;
       border-radius:999px;
-      text-decoration:none;
       font-weight:800;
-      letter-spacing:.2px;
-
-      color:var(--text);
+      text-decoration:none;
       background:rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.14);
-      backdrop-filter: blur(10px);
-      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+      transition:.2s;
     }
 
-    .btn:hover{
-      transform:translateY(-2px);
-      background:rgba(255,255,255,.10);
-      border-color:rgba(255,255,255,.22);
-    }
-
+    .btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.10)}
     .btn.gold{
-      color:#0f0f10;
-      border:1px solid rgba(0,0,0,.25);
+      color:#111;
       background:linear-gradient(90deg,var(--gold1),var(--gold2),var(--gold3));
+      border:1px solid rgba(0,0,0,.25);
       box-shadow:0 14px 35px rgba(0,0,0,.45);
     }
 
-    /* SECTIONS */
-    section{
-      padding:56px 0;
-    }
+    section{padding:56px 0;}
+    h2{text-align:center;font-size:2.05rem;margin-bottom:26px;font-weight:800}
 
-    h2{
-      text-align:center;
-      font-size:2.15rem;
-      letter-spacing:.3px;
-      margin-bottom:28px;
-      font-weight:800;
-    }
-
-    .sub{
-      text-align:center;
-      color:rgba(242,242,242,.72);
-      margin-top:-14px;
-      margin-bottom:28px;
-      font-weight:600;
-      letter-spacing:.15px;
-    }
-
-    /* PREMIUM PANELS */
     .panel{
-      background:linear-gradient(180deg, var(--panel), var(--panel2));
+      background:linear-gradient(180deg,var(--panel),var(--panel2));
       border:1px solid var(--border);
       border-radius:var(--radius);
       box-shadow:var(--shadowSoft);
@@ -178,162 +132,53 @@
       max-width:920px;
       margin:0 auto;
       text-align:center;
-      color:rgba(242,242,242,.88);
       font-size:1.08rem;
       font-weight:500;
+      color:rgba(242,242,242,.9);
     }
 
-    /* OFFER GRID */
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:16px;
-      margin-top:6px;
     }
 
     .card{
-      background:linear-gradient(180deg, var(--panel), var(--panel2));
+      background:linear-gradient(180deg,var(--panel),var(--panel2));
       border:1px solid var(--border);
       border-radius:var(--radius);
       box-shadow:var(--shadowSoft);
       padding:28px;
       text-align:center;
-      transition: transform .25s ease, border-color .25s ease, background .25s ease;
-    }
-
-    .card:hover{
-      transform:translateY(-6px);
-      border-color:rgba(201,162,77,.26);
-      background:linear-gradient(180deg, rgba(201,162,77,.10), var(--panel2));
     }
 
     .card h3{
       margin-bottom:10px;
-      font-size:1.28rem;
+      font-size:1.25rem;
       font-weight:800;
-      letter-spacing:.2px;
-      background:linear-gradient(90deg, var(--gold1), var(--gold2), var(--gold3));
+      background:linear-gradient(90deg,var(--gold1),var(--gold2),var(--gold3));
       -webkit-background-clip:text;
       background-clip:text;
       color:transparent;
-    }
-
-    .card p{
-      color:rgba(242,242,242,.82);
-      font-weight:500;
-    }
-
-    /* CONTACT + MAP */
-    .contact-grid{
-      display:grid;
-      grid-template-columns:1fr 1.15fr;
-      gap:16px;
-      align-items:stretch;
-      margin-top:8px;
     }
 
     .contact{
-      background:
-        radial-gradient(520px 240px at 12% 12%, rgba(201,162,77,.16), transparent 62%),
-        radial-gradient(520px 240px at 92% 30%, rgba(166,124,27,.12), transparent 62%),
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
+      background:linear-gradient(180deg,var(--panel),var(--panel2));
       border:1px solid rgba(201,162,77,.20);
       border-radius:var(--radius);
-      box-shadow:var(--shadow);
       padding:30px;
+      box-shadow:var(--shadow);
     }
 
-    .contact p{
-      margin:12px 0;
-      font-size:1.05rem;
-      font-weight:600;
-      color:rgba(242,242,242,.88);
-    }
-
-    .contact strong{
-      font-weight:900;
-      background:linear-gradient(90deg, var(--gold1), var(--gold2), var(--gold3));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-    }
-
-    .contact a{
-      text-decoration:none;
-      border-bottom:1px dashed rgba(242,242,242,.36);
-      padding-bottom:2px;
-    }
-    .contact a:hover{border-bottom-color:rgba(201,162,77,.78);}
-
-    .address{
-      margin-top:14px;
-      padding-top:14px;
-      border-top:1px solid rgba(255,255,255,.12);
-      color:rgba(242,242,242,.82);
-      font-weight:600;
-    }
-
-    .hint{
-      margin-top:10px;
-      color:rgba(242,242,242,.70);
-      font-weight:600;
-      font-size:.98rem;
-    }
-
-    .map{
-      border-radius:var(--radius);
-      overflow:hidden;
-      border:1px solid var(--border);
-      box-shadow:var(--shadowSoft);
-      background:rgba(255,255,255,.03);
-      min-height:380px;
-    }
-
-    .map iframe{
-      width:100%;
-      height:100%;
-      min-height:380px;
-      border:0;
-      display:block;
-
-      /* żeby jaśniejsza mapa nie raziła tak mocno */
-      filter: saturate(1.05) contrast(1.02) brightness(.92);
-    }
+    .contact p{margin:10px 0;font-weight:600}
 
     footer{
-      padding:22px 0;
       border-top:1px solid rgba(255,255,255,.10);
-      color:rgba(242,242,242,.62);
       text-align:center;
-      font-weight:600;
-      letter-spacing:.2px;
-      font-size:.92rem;
-    }
-
-    /* MOBILE CALL FAB */
-    .call-fab{
-      display:none;
-      position:fixed;
-      right:16px;
-      bottom:16px;
-      padding:14px 18px;
-      border-radius:999px;
-      font-weight:900;
-      color:#0f0f10;
-      background:linear-gradient(90deg,var(--gold1),var(--gold2),var(--gold3));
-      box-shadow:0 16px 40px rgba(0,0,0,.55);
-      text-decoration:none;
-      z-index:999;
-      border:1px solid rgba(0,0,0,.25);
-    }
-
-    @media(max-width:900px){
-      .contact-grid{grid-template-columns:1fr;}
-    }
-
-    @media(max-width:620px){
-      h1{font-size:2.35rem; letter-spacing:1.6px;}
-      .call-fab{display:inline-flex;}
+      padding:28px 20px;
+      color:rgba(242,242,242,.7);
+      font-size:.95rem;
+      line-height:1.6;
     }
   </style>
 </head>
@@ -341,82 +186,71 @@
 <body>
 
 <header>
-  <div class="wrap brand">
+  <div class="wrap">
     <div class="kicker">Rolety • Żaluzje • Montaż</div>
-    <h1><span class="gold-text">WESKO</span> Zamość</h1>
-    <p class="lead">Solidny montaż, estetyczne wykończenie • Zamość i okolice</p>
+    <img src="logo-wesko.png" alt="WESKO – Profesjonalny montaż rolet i żaluzji" class="logo-img">
+    <p class="lead">Nowoczesny montaż, estetyczne wykończenie • Zamość i okolice</p>
 
-    <div class="actions" aria-label="Szybkie akcje">
-      <a class="btn gold" href="tel:+48663438606">📞 Zadzwoń</a>
-      <a class="btn" href="#kontakt">✉️ Kontakt</a>
-      <a class="btn" href="#mapa">📍 Mapa</a>
+    <div class="actions">
+      <a href="tel:+48663438606" class="btn gold">📞 Zadzwoń</a>
+      <a href="#kontakt" class="btn">✉️ Kontakt</a>
     </div>
   </div>
 </header>
 
 <main class="wrap">
 
-  <section>
-    <h2>O nas</h2>
-    <p class="sub">Precyzja • Doradztwo • Terminowość</p>
-    <div class="panel">
-      <p class="about">
-        WESKO Zamość to profesjonalny montaż rolet i żaluzji. Stawiamy na jakość, estetykę i czysty efekt końcowy.
-        Skontaktuj się z nami — doradzimy najlepsze rozwiązanie i umówimy termin.
-      </p>
+<section>
+  <h2>O firmie</h2>
+  <div class="panel">
+    <p class="about">
+      <strong>WESKO</strong> to nowa, dynamicznie rozwijająca się firma z siedzibą w Zamościu,
+      <strong>założona w 2026 roku</strong>. Powstała z myślą o klientach, którzy oczekują
+      rzetelnego doradztwa, precyzyjnego montażu oraz estetycznego wykończenia.
+      <br><br>
+      Specjalizujemy się w montażu rolet oraz żaluzji, dbając o każdy detal – od pierwszego
+      kontaktu, przez pomiar, aż po finalny efekt. Stawiamy na indywidualne podejście,
+      terminowość oraz rozwiązania dopasowane do realnych potrzeb klienta.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Oferta</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Rolety</h3>
+      <p>Rolety wewnętrzne i zewnętrzne dopasowane do stylu wnętrza, zapewniające komfort,
+      prywatność oraz kontrolę światła.</p>
     </div>
-  </section>
-
-  <section>
-    <h2>Oferta</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Rolety</h3>
-        <p>Rolety wewnętrzne i zewnętrzne dopasowane do wnętrza i potrzeb.</p>
-      </div>
-      <div class="card">
-        <h3>Żaluzje</h3>
-        <p>Nowoczesne i klasyczne — funkcjonalność oraz styl w jednym.</p>
-      </div>
-      <div class="card">
-        <h3>Montaż</h3>
-        <p>Dokładny montaż z dbałością o detale i estetyczne wykończenie.</p>
-      </div>
+    <div class="card">
+      <h3>Żaluzje</h3>
+      <p>Nowoczesne i klasyczne żaluzje, które łączą funkcjonalność z eleganckim wyglądem.</p>
     </div>
-  </section>
-
-  <section id="kontakt">
-    <h2>Kontakt</h2>
-
-    <div class="contact-grid">
-      <div class="contact">
-        <p><strong>Telefon:</strong> <a href="tel:+48663438606">663 438 606</a></p>
-        <p><strong>E-mail:</strong> <a href="mailto:weskozamosc@gmail.com">weskozamosc@gmail.com</a></p>
-
-        <div class="address">
-          <p><strong>Adres:</strong> Lubelska 36c, 22-400 Zamość</p>
-          <p class="hint">Zadzwoń lub napisz — oddzwonimy i ustalimy termin.</p>
-        </div>
-      </div>
-
-      <div class="map" id="mapa" aria-label="Mapa – Lubelska 36c, 22-400 Zamość">
-        <iframe
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Google Maps – Lubelska 36c, 22-400 Zamość"
-          src="https://www.google.com/maps?q=Lubelska%2036c%2C%2022-400%20Zamo%C5%9B%C4%87&output=embed">
-        </iframe>
-      </div>
+    <div class="card">
+      <h3>Montaż</h3>
+      <p>Profesjonalny montaż wykonany precyzyjnie, czysto i zgodnie z ustalonym terminem.</p>
     </div>
-  </section>
+  </div>
+</section>
+
+<section id="kontakt">
+  <h2>Kontakt</h2>
+  <div class="contact">
+    <p><strong>WESKO – Szymon Ałaj</strong></p>
+    <p>NIP: 9223089183</p>
+    <p>ul. Lubelska 36c, 22-400 Zamość</p>
+    <p>tel. <a href="tel:+48663438606">663 438 606</a></p>
+    <p>e-mail: <a href="mailto:weskozamosc@gmail.com">weskozamosc@gmail.com</a></p>
+  </div>
+</section>
 
 </main>
 
 <footer>
-  © 2026 WESKO Zamość – Wszystkie prawa zastrzeżone
+  © 2026 WESKO – Szymon Ałaj<br>
+  Profesjonalny montaż rolet i żaluzji • Zamość
 </footer>
-
-<a class="call-fab" href="tel:+48663438606" aria-label="Zadzwoń do WESKO">📞 Zadzwoń</a>
 
 </body>
 </html>
