@@ -8,12 +8,10 @@
   <meta name="description" content="WESKO — premium montaż rolet i żaluzji. Zamość i okolice. Pomiar, doradztwo, szybki montaż. Zadzwoń: 663 438 606." />
   <meta name="robots" content="index,follow" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="WESKO — Rolety i Żaluzje | Zamość" />
   <meta property="og:description" content="Premium montaż rolet i żaluzji. Pomiar, doradztwo, szybki montaż. Zadzwoń: 663 438 606." />
   <meta property="og:type" content="website" />
 
-  <!-- Fonts (system-first, no external dependency required) -->
   <style>
     :root{
       --bg: #0b0c0f;
@@ -24,9 +22,10 @@
       --muted:#aab0c2;
       --line:rgba(255,255,255,.10);
 
-      --gold1:#f7e7b0;
-      --gold2:#d9b45c;
-      --gold3:#a87f2f;
+      /* WESKO (grafit + czerwień) */
+      --gold1:#ff5a62;   /* jasna czerwień */
+      --gold2:#b11217;   /* główna czerwień WESKO */
+      --gold3:#6f0a0d;   /* ciemna czerwień */
 
       --shadow: 0 18px 60px rgba(0,0,0,.55);
       --shadow2: 0 10px 30px rgba(0,0,0,.45);
@@ -39,19 +38,18 @@
 
       --ease: cubic-bezier(.2,.9,.2,1);
 
-      --focus: 0 0 0 3px rgba(217,180,92,.25);
+      --focus: 0 0 0 3px rgba(177,18,23,.28);
     }
 
-    /* ====== Base ====== */
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
       color:var(--text);
       background:
-        radial-gradient(1200px 800px at 20% -10%, rgba(217,180,92,.18), transparent 60%),
-        radial-gradient(900px 700px at 110% 20%, rgba(247,231,176,.10), transparent 55%),
-        radial-gradient(900px 700px at 30% 110%, rgba(168,127,47,.10), transparent 55%),
+        radial-gradient(1200px 800px at 20% -10%, rgba(177,18,23,.18), transparent 60%),
+        radial-gradient(900px 700px at 110% 20%, rgba(255,90,98,.10), transparent 55%),
+        radial-gradient(900px 700px at 30% 110%, rgba(111,10,13,.10), transparent 55%),
         linear-gradient(180deg, var(--bg), var(--bg2));
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       line-height:1.35;
@@ -82,7 +80,7 @@
     }
     .skip-link:focus{left:14px; outline:none; box-shadow:var(--focus)}
 
-    /* ====== Decorative premium gold gradient utility ====== */
+    /* Accent (zostawiam klasę .gold dla kompatybilności HTML, ale kolor jest WESKO) */
     .gold{
       background: linear-gradient(110deg, var(--gold1), var(--gold2), var(--gold3));
       -webkit-background-clip:text;
@@ -106,10 +104,9 @@
     .badge .dot{
       width:8px;height:8px;border-radius:99px;
       background: linear-gradient(120deg, var(--gold1), var(--gold2), var(--gold3));
-      box-shadow: 0 0 0 3px rgba(217,180,92,.14);
+      box-shadow: 0 0 0 3px rgba(177,18,23,.14);
     }
 
-    /* ====== Header ====== */
     header{
       position:sticky;
       top:0;
@@ -219,10 +216,10 @@
     .btn:active{transform: translateY(0px)}
 
     .btn-primary{
-      border: 1px solid rgba(217,180,92,.35);
+      border: 1px solid rgba(177,18,23,.40);
       background:
-        radial-gradient(800px 200px at 20% 20%, rgba(247,231,176,.25), transparent 60%),
-        linear-gradient(135deg, rgba(217,180,92,.18), rgba(168,127,47,.12));
+        radial-gradient(800px 200px at 20% 20%, rgba(255,90,98,.22), transparent 60%),
+        linear-gradient(135deg, rgba(177,18,23,.18), rgba(111,10,13,.12));
     }
     .btn-primary .gold{font-weight:700}
 
@@ -258,7 +255,6 @@
     .hamburger span::before{top:-6px}
     .hamburger span::after{top:6px}
 
-    /* Mobile drawer */
     .drawer{
       display:none;
       border-top: 1px solid rgba(255,255,255,.08);
@@ -288,7 +284,6 @@
       margin-top:0;
     }
 
-    /* ====== Hero ====== */
     .hero{
       position:relative;
       padding: 52px 0 26px;
@@ -305,8 +300,8 @@
       border-radius: var(--radius2);
       border: 1px solid rgba(255,255,255,.10);
       background:
-        radial-gradient(900px 300px at 20% 10%, rgba(217,180,92,.22), transparent 60%),
-        radial-gradient(700px 320px at 90% 30%, rgba(247,231,176,.10), transparent 55%),
+        radial-gradient(900px 300px at 20% 10%, rgba(177,18,23,.22), transparent 60%),
+        radial-gradient(700px 320px at 90% 30%, rgba(255,90,98,.10), transparent 55%),
         linear-gradient(180deg, rgba(18,22,34,.78), rgba(15,18,24,.62));
       box-shadow: var(--shadow);
       padding: 26px;
@@ -319,8 +314,8 @@
       position:absolute;
       inset:-2px;
       background:
-        radial-gradient(800px 240px at 15% 10%, rgba(247,231,176,.18), transparent 60%),
-        radial-gradient(600px 240px at 85% 25%, rgba(168,127,47,.12), transparent 58%);
+        radial-gradient(800px 240px at 15% 10%, rgba(255,90,98,.16), transparent 60%),
+        radial-gradient(600px 240px at 85% 25%, rgba(111,10,13,.12), transparent 58%);
       pointer-events:none;
       filter: blur(10px);
       opacity:.9;
@@ -379,7 +374,6 @@
       position:relative;
     }
 
-    /* Decorative "slats" */
     .slats{
       position:absolute;
       inset:0;
@@ -430,9 +424,9 @@
 
     .hero-card .callout{
       border-radius: 18px;
-      border: 1px solid rgba(217,180,92,.22);
+      border: 1px solid rgba(177,18,23,.28);
       background:
-        radial-gradient(500px 120px at 20% 10%, rgba(247,231,176,.16), transparent 60%),
+        radial-gradient(500px 120px at 20% 10%, rgba(255,90,98,.14), transparent 60%),
         rgba(0,0,0,.18);
       padding: 14px 14px;
     }
@@ -452,7 +446,6 @@
       font-size: 12px;
     }
 
-    /* ====== Sections ====== */
     section{
       padding: 32px 0;
     }
@@ -492,7 +485,7 @@
       border-radius: var(--radius);
       border: 1px solid rgba(255,255,255,.10);
       background:
-        radial-gradient(700px 220px at 10% 0%, rgba(217,180,92,.10), transparent 60%),
+        radial-gradient(700px 220px at 10% 0%, rgba(177,18,23,.10), transparent 60%),
         linear-gradient(180deg, rgba(18,22,34,.70), rgba(15,18,24,.55));
       box-shadow: var(--shadow2);
       padding: 18px;
@@ -507,7 +500,7 @@
       top:-80px;
       width:200px;
       height:200px;
-      background: radial-gradient(circle at 30% 30%, rgba(247,231,176,.18), transparent 60%);
+      background: radial-gradient(circle at 30% 30%, rgba(255,90,98,.16), transparent 60%);
       filter: blur(8px);
       opacity:.8;
       pointer-events:none;
@@ -526,9 +519,9 @@
     .icon{
       width:42px;height:42px;
       border-radius: 14px;
-      border:1px solid rgba(217,180,92,.18);
+      border:1px solid rgba(177,18,23,.18);
       background:
-        radial-gradient(400px 140px at 30% 10%, rgba(247,231,176,.20), transparent 60%),
+        radial-gradient(400px 140px at 30% 10%, rgba(255,90,98,.18), transparent 60%),
         rgba(0,0,0,.18);
       display:grid;
       place-items:center;
@@ -540,7 +533,6 @@
       opacity:.98;
     }
 
-    /* Realizations placeholders */
     .gallery{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
@@ -553,8 +545,8 @@
       border: 1px solid rgba(255,255,255,.10);
       background:
         linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.36)),
-        radial-gradient(800px 260px at 20% 10%, rgba(217,180,92,.16), transparent 60%),
-        radial-gradient(800px 260px at 90% 30%, rgba(247,231,176,.08), transparent 60%),
+        radial-gradient(800px 260px at 20% 10%, rgba(177,18,23,.14), transparent 60%),
+        radial-gradient(800px 260px at 90% 30%, rgba(255,90,98,.08), transparent 60%),
         repeating-linear-gradient(135deg, rgba(255,255,255,.05) 0px, rgba(255,255,255,.05) 10px, rgba(0,0,0,.00) 10px, rgba(0,0,0,.00) 24px);
       box-shadow: var(--shadow2);
       position:relative;
@@ -573,7 +565,6 @@
       backdrop-filter: blur(10px);
     }
 
-    /* Testimonials */
     .quote{
       display:flex;
       gap: 12px;
@@ -595,7 +586,6 @@
       font-size: 13px;
     }
 
-    /* FAQ */
     .faq{
       display:grid;
       gap: 10px;
@@ -634,7 +624,6 @@
       font-size: 14px;
     }
 
-    /* Contact */
     .contact{
       display:grid;
       grid-template-columns: .95fr 1.05fr;
@@ -661,7 +650,7 @@
     }
     .li .mini-ico{
       width:36px;height:36px;border-radius: 14px;
-      border: 1px solid rgba(217,180,92,.18);
+      border: 1px solid rgba(177,18,23,.18);
       background: rgba(0,0,0,.14);
       display:grid;place-items:center;
       flex:0 0 auto;
@@ -687,7 +676,6 @@
       filter: grayscale(20%) contrast(110%) brightness(95%);
     }
 
-    /* Footer */
     footer{
       padding: 26px 0 38px;
       border-top: 1px solid rgba(255,255,255,.08);
@@ -706,11 +694,10 @@
     .foot a{
       color: rgba(233,236,246,.86);
       text-decoration:none;
-      border-bottom: 1px dashed rgba(217,180,92,.35);
+      border-bottom: 1px dashed rgba(177,18,23,.45);
     }
     .foot a:hover{color:#fff}
 
-    /* ====== Responsive ====== */
     @media (max-width: 980px){
       .hero-grid{grid-template-columns: 1fr; }
       .hero-right{min-height: 360px}
@@ -738,13 +725,12 @@
 <body>
   <a class="skip-link" href="#main">Przejdź do treści</a>
 
-  <!-- Inline SVG gradient for icons -->
   <svg width="0" height="0" style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true" focusable="false">
     <defs>
       <linearGradient id="gfill" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#f7e7b0"/>
-        <stop offset="0.55" stop-color="#d9b45c"/>
-        <stop offset="1" stop-color="#a87f2f"/>
+        <stop offset="0" stop-color="#ff5a62"/>
+        <stop offset="0.55" stop-color="#b11217"/>
+        <stop offset="1" stop-color="#6f0a0d"/>
       </linearGradient>
     </defs>
   </svg>
@@ -754,8 +740,8 @@
       <div class="topbar">
         <div class="brand" aria-label="WESKO">
           <div class="brand-logo" title="Logo WESKO">
-            <!-- Podmień na swoje logo: assets/wesko-logo.png -->
             <img src="assets/wesko-logo.png" alt="WESKO logo" onerror="this.style.display='none'; this.parentElement.innerHTML = '<strong class=&quot;gold&quot; style=&quot;font-size:18px;letter-spacing:1px&quot;>W</strong>';">
+
           </div>
           <div class="brand-title">
             <strong class="gold">WESKO</strong>
@@ -803,7 +789,6 @@
   </header>
 
   <main id="main">
-    <!-- HERO -->
     <section class="hero" aria-label="Wstęp">
       <div class="container">
         <div class="hero-grid">
@@ -819,7 +804,7 @@
             </h1>
             <p>
               Robimy to prosto: przyjeżdżamy, mierzymy, doradzamy i montujemy.
-              Ciemny, elegancki efekt — <span class="gold">złote detale</span>, perfekcyjna estetyka i porządek po robocie.
+              Ciemny, elegancki efekt — <span class="gold">czerwone detale</span>, perfekcyjna estetyka i porządek po robocie.
             </p>
 
             <div class="hero-ctas">
@@ -890,13 +875,12 @@
       </div>
     </section>
 
-    <!-- OFERTA -->
     <section id="oferta" aria-label="Oferta">
       <div class="container">
         <div class="section-head">
           <div>
             <h2>Oferta</h2>
-            <p>Dobieramy rozwiązanie pod wnętrze i potrzeby. Ciemny styl, złote detale — premium efekt.</p>
+            <p>Dobieramy rozwiązanie pod wnętrze i potrzeby. Ciemny styl, czerwone detale — premium efekt.</p>
           </div>
         </div>
 
@@ -928,7 +912,6 @@
       </div>
     </section>
 
-    <!-- REALIZACJE -->
     <section id="realizacje" aria-label="Realizacje">
       <div class="container">
         <div class="section-head">
@@ -950,7 +933,6 @@
       </div>
     </section>
 
-    <!-- OPINIE -->
     <section id="opinie" aria-label="Opinie klientów">
       <div class="container">
         <div class="section-head">
@@ -1000,7 +982,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
     <section id="faq" aria-label="Najczęstsze pytania">
       <div class="container">
         <div class="section-head">
@@ -1054,7 +1035,6 @@
       </div>
     </section>
 
-    <!-- KONTAKT -->
     <section id="kontakt" aria-label="Kontakt">
       <div class="container">
         <div class="section-head">
@@ -1158,7 +1138,7 @@
     <div class="container">
       <div class="foot">
         <div style="display:flex;align-items:center;gap:10px">
-          <div style="width:10px;height:10px;border-radius:99px;background:linear-gradient(120deg,var(--gold1),var(--gold2),var(--gold3)); box-shadow:0 0 0 3px rgba(217,180,92,.14)"></div>
+          <div style="width:10px;height:10px;border-radius:99px;background:linear-gradient(120deg,var(--gold1),var(--gold2),var(--gold3)); box-shadow:0 0 0 3px rgba(177,18,23,.14)"></div>
           <small>© <span id="year"></span> WESKO — Rolety i Żaluzje • Zamość</small>
         </div>
         <small>
@@ -1188,18 +1168,15 @@
           setOpen(!isOpen);
         });
 
-        // Close drawer on link click (mobile)
         drawer.querySelectorAll('a[href^="#"]').forEach(a => {
           a.addEventListener('click', () => setOpen(false));
         });
 
-        // Close on ESC
         document.addEventListener('keydown', (e) => {
           if(e.key === 'Escape') setOpen(false);
         });
       }
 
-      // Simple form -> opens mail client (no backend needed for GitHub Pages)
       const form = document.getElementById('leadForm');
       const note = document.getElementById('formNote');
 
