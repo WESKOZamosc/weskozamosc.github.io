@@ -3,42 +3,41 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b0c0f" />
-  <title>WESKO — Rolety i Żaluzje | Zamość</title>
-  <meta name="description" content="WESKO — premium montaż rolet i żaluzji. Zamość i okolice. Pomiar, doradztwo, szybki montaż. Zadzwoń: 663 438 606." />
+  <meta name="theme-color" content="#07080b" />
+
+  <title>WESKO — strony internetowe, social media i usługi IT dla firm</title>
+  <meta name="description" content="WESKO — nowoczesne usługi B2B dla firm: strony internetowe, modernizacja stron, administracja, social media i podstawowe usługi IT. Zamość i okolice." />
   <meta name="robots" content="index,follow" />
 
-  <meta property="og:title" content="WESKO — Rolety i Żaluzje | Zamość" />
-  <meta property="og:description" content="Premium montaż rolet i żaluzji. Pomiar, doradztwo, szybki montaż. Zadzwoń: 663 438 606." />
+  <meta property="og:title" content="WESKO — nowoczesne usługi B2B dla firm" />
+  <meta property="og:description" content="Strony internetowe, modernizacja, administracja, social media i usługi IT dla firm. Minimalistycznie, konkretnie i profesjonalnie." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/hero-bg.png" />
 
   <style>
     :root{
-      --bg: #0b0c0f;
-      --bg2:#0f1218;
-      --card:#121622;
-      --card2:#0f1320;
-      --text:#e9ecf6;
-      --muted:#aab0c2;
-      --line:rgba(255,255,255,.10);
-
-      /* WESKO (grafit + czerwień) */
-      --gold1:#ff5a62;   /* jasna czerwień */
-      --gold2:#b11217;   /* główna czerwień WESKO */
-      --gold3:#6f0a0d;   /* ciemna czerwień */
-
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --shadow2: 0 10px 30px rgba(0,0,0,.45);
-
-      --radius: 18px;
-      --radius2: 26px;
-
-      --max: 1180px;
-      --pad: 22px;
-
-      --ease: cubic-bezier(.2,.9,.2,1);
-
-      --focus: 0 0 0 3px rgba(177,18,23,.28);
+      --bg:#07080b;
+      --bg2:#0b0d12;
+      --panel:#11141b;
+      --panel2:#0d1016;
+      --text:#f2f3f6;
+      --muted:#a8adb8;
+      --soft:#d7d9df;
+      --line:rgba(255,255,255,.12);
+      --line2:rgba(255,255,255,.08);
+      --red:#d30f18;
+      --red2:#8d080e;
+      --red3:#ff3b45;
+      --silver1:#ffffff;
+      --silver2:#b9bdc7;
+      --silver3:#545b67;
+      --shadow:0 30px 90px rgba(0,0,0,.62);
+      --shadow2:0 18px 50px rgba(0,0,0,.42);
+      --radius:24px;
+      --radius2:34px;
+      --max:1180px;
+      --pad:22px;
+      --ease:cubic-bezier(.2,.9,.2,1);
     }
 
     *{box-sizing:border-box}
@@ -47,150 +46,74 @@
       margin:0;
       color:var(--text);
       background:
-        radial-gradient(1200px 800px at 20% -10%, rgba(177,18,23,.18), transparent 60%),
-        radial-gradient(900px 700px at 110% 20%, rgba(255,90,98,.10), transparent 55%),
-        radial-gradient(900px 700px at 30% 110%, rgba(111,10,13,.10), transparent 55%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      line-height:1.35;
-      letter-spacing: .2px;
+        radial-gradient(900px 500px at 20% -10%, rgba(211,15,24,.16), transparent 60%),
+        radial-gradient(900px 580px at 100% 10%, rgba(255,59,69,.08), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2) 62%, #07080b);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height:1.45;
+      letter-spacing:.2px;
       overflow-x:hidden;
     }
 
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.035) 0 1px, transparent 1px 80px),
+        radial-gradient(circle at 50% 0%, rgba(255,255,255,.045), transparent 28%);
+      opacity:.45;
+      pointer-events:none;
+    }
+
+    body:after{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      background:
+        repeating-linear-gradient(0deg, rgba(255,255,255,.018) 0 1px, transparent 1px 4px);
+      opacity:.22;
+      pointer-events:none;
+      mix-blend-mode:screen;
+    }
+
     a{color:inherit}
-    img{max-width:100%; display:block}
-    button{font-family:inherit}
+    img{display:block;max-width:100%}
+    button,input,textarea{font:inherit}
 
     .container{
       width:100%;
       max-width:var(--max);
       margin:0 auto;
-      padding: 0 var(--pad);
+      padding:0 var(--pad);
     }
 
     .skip-link{
       position:absolute;
+      top:14px;
       left:-999px;
-      top:10px;
+      z-index:999;
       padding:10px 14px;
-      background: #111827;
+      border-radius:14px;
+      background:#10131a;
       border:1px solid var(--line);
-      border-radius: 12px;
-      z-index:9999;
+      text-decoration:none;
     }
-    .skip-link:focus{left:14px; outline:none; box-shadow:var(--focus)}
+    .skip-link:focus{left:14px;outline:2px solid var(--red3)}
 
-    /* Accent (zostawiam klasę .gold dla kompatybilności HTML, ale kolor jest WESKO) */
-    .gold{
-      background: linear-gradient(110deg, var(--gold1), var(--gold2), var(--gold3));
+    .metal{
+      background:linear-gradient(180deg, var(--silver1), var(--silver2) 46%, #727985 54%, var(--silver1));
       -webkit-background-clip:text;
       background-clip:text;
       color:transparent;
+      text-shadow:0 14px 40px rgba(0,0,0,.45);
     }
 
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(18,22,34,.45);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow2);
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .badge .dot{
-      width:8px;height:8px;border-radius:99px;
-      background: linear-gradient(120deg, var(--gold1), var(--gold2), var(--gold3));
-      box-shadow: 0 0 0 3px rgba(177,18,23,.14);
-    }
-
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      background: rgba(11,12,15,.55);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding: 14px 0;
-      gap: 14px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-      min-width: 200px;
-    }
-    .brand-logo{
-      width:46px;height:46px;
-      border-radius: 14px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(18,22,34,.55);
-      display:grid;
-      place-items:center;
-      box-shadow: 0 12px 26px rgba(0,0,0,.35);
-    }
-    .brand-logo img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      padding:6px;
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
-    }
-    .brand-title{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-    }
-    .brand-title strong{
-      font-size: 16px;
-      letter-spacing: 1px;
-    }
-    .brand-title span{
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    nav{
-      display:flex;
-      align-items:center;
-      gap: 18px;
-    }
-
-    .navlinks{
-      display:flex;
-      gap: 18px;
-      align-items:center;
-    }
-    .navlinks a{
-      text-decoration:none;
-      font-size: 14px;
-      color: rgba(233,236,246,.86);
-      padding: 10px 10px;
-      border-radius: 12px;
-      transition: transform .18s var(--ease), background .18s var(--ease), color .18s var(--ease);
-    }
-    .navlinks a:hover{
-      background: rgba(255,255,255,.06);
-      transform: translateY(-1px);
-      color:#fff;
-    }
-    .navlinks a:focus{outline:none; box-shadow:var(--focus)}
-
-    .actions{
-      display:flex;
-      gap: 10px;
-      align-items:center;
+    .red{
+      color:var(--red3);
+      text-shadow:0 0 26px rgba(211,15,24,.45);
     }
 
     .btn{
@@ -198,526 +121,671 @@
       align-items:center;
       justify-content:center;
       gap:10px;
-      padding: 11px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(18,22,34,.45);
-      color: var(--text);
+      min-height:46px;
+      padding:12px 18px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.13);
+      background:rgba(255,255,255,.045);
+      color:var(--text);
       text-decoration:none;
-      font-size: 14px;
-      transition: transform .18s var(--ease), box-shadow .18s var(--ease), background .18s var(--ease);
-      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+      font-weight:800;
+      font-size:14px;
+      letter-spacing:.3px;
+      box-shadow:0 16px 42px rgba(0,0,0,.35);
+      transition:transform .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease), box-shadow .2s var(--ease);
       cursor:pointer;
-      user-select:none;
       white-space:nowrap;
     }
-    .btn:hover{transform: translateY(-1px); background: rgba(18,22,34,.65)}
-    .btn:focus{outline:none; box-shadow:var(--focus)}
-    .btn:active{transform: translateY(0px)}
-
+    .btn:hover{
+      transform:translateY(-2px);
+      border-color:rgba(255,255,255,.25);
+      background:rgba(255,255,255,.075);
+      box-shadow:0 22px 58px rgba(0,0,0,.48);
+    }
     .btn-primary{
-      border: 1px solid rgba(177,18,23,.40);
+      border-color:rgba(211,15,24,.55);
       background:
-        radial-gradient(800px 200px at 20% 20%, rgba(255,90,98,.22), transparent 60%),
-        linear-gradient(135deg, rgba(177,18,23,.18), rgba(111,10,13,.12));
+        radial-gradient(220px 70px at 25% 20%, rgba(255,255,255,.22), transparent 60%),
+        linear-gradient(135deg, var(--red), var(--red2));
+      box-shadow:0 20px 60px rgba(211,15,24,.26), 0 18px 44px rgba(0,0,0,.45);
     }
-    .btn-primary .gold{font-weight:700}
+    .btn-primary:hover{
+      border-color:rgba(255,59,69,.95);
+      background:
+        radial-gradient(220px 70px at 25% 20%, rgba(255,255,255,.25), transparent 60%),
+        linear-gradient(135deg, #ec1822, #90070d);
+    }
 
-    .hamburger{
-      display:none;
-      width:44px;height:44px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(18,22,34,.45);
-      box-shadow: 0 12px 30px rgba(0,0,0,.35);
-      cursor:pointer;
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:9px 13px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.045);
+      color:var(--muted);
+      font-size:13px;
+      font-weight:700;
+      backdrop-filter:blur(14px);
     }
-    .hamburger:focus{outline:none; box-shadow:var(--focus)}
-    .hamburger span{
-      display:block;
-      width:18px;
-      height:2px;
-      background: rgba(233,236,246,.85);
-      margin: 0 auto;
-      position: relative;
-      border-radius: 99px;
-    }
-    .hamburger span::before,
-    .hamburger span::after{
+    .badge:before{
       content:"";
-      position:absolute;
-      left:0;
-      width:18px;
-      height:2px;
-      background: rgba(233,236,246,.85);
-      border-radius: 99px;
+      width:8px;
+      height:8px;
+      border-radius:99px;
+      background:var(--red);
+      box-shadow:0 0 22px rgba(255,59,69,.85);
+      flex:0 0 auto;
     }
-    .hamburger span::before{top:-6px}
-    .hamburger span::after{top:6px}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:60;
+      background:rgba(7,8,11,.68);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(18px);
+    }
+
+    .nav{
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      min-width:210px;
+    }
+    .brand-mark{
+      width:54px;
+      height:54px;
+      display:grid;
+      place-items:center;
+      border-radius:18px;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(255,59,69,.22), transparent 54%),
+        rgba(255,255,255,.035);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 16px 44px rgba(0,0,0,.42);
+      overflow:hidden;
+    }
+    .brand-mark img{
+      width:48px;
+      height:48px;
+      object-fit:contain;
+      filter:drop-shadow(0 0 16px rgba(211,15,24,.35));
+    }
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.08;
+    }
+    .brand-text strong{
+      font-size:20px;
+      letter-spacing:3px;
+      font-weight:950;
+    }
+    .brand-text span{
+      margin-top:4px;
+      color:var(--muted);
+      font-size:12px;
+      letter-spacing:.45px;
+    }
+
+    .navlinks{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+    }
+    .navlinks a{
+      text-decoration:none;
+      color:rgba(242,243,246,.78);
+      font-size:14px;
+      font-weight:750;
+      padding:10px 12px;
+      border-radius:14px;
+      transition:background .2s var(--ease), color .2s var(--ease), transform .2s var(--ease);
+    }
+    .navlinks a:hover{
+      color:#fff;
+      background:rgba(255,255,255,.065);
+      transform:translateY(-1px);
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .menu-btn{
+      display:none;
+      width:48px;
+      height:48px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.045);
+      cursor:pointer;
+      place-items:center;
+    }
+    .menu-btn span,
+    .menu-btn span:before,
+    .menu-btn span:after{
+      display:block;
+      width:20px;
+      height:2px;
+      border-radius:99px;
+      background:#fff;
+      content:"";
+      position:relative;
+    }
+    .menu-btn span:before{position:absolute;top:-7px;left:0}
+    .menu-btn span:after{position:absolute;top:7px;left:0}
 
     .drawer{
       display:none;
-      border-top: 1px solid rgba(255,255,255,.08);
-      padding: 12px 0 18px;
+      padding:0 0 16px;
     }
+    .drawer.open{display:block}
     .drawer a{
       display:flex;
-      justify-content:space-between;
       align-items:center;
+      justify-content:space-between;
+      padding:14px 14px;
+      margin-top:10px;
+      border-radius:18px;
+      background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,255,255,.09);
       text-decoration:none;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(18,22,34,.35);
-      margin-top: 10px;
-      color: rgba(233,236,246,.9);
-    }
-    .drawer a:focus{outline:none; box-shadow:var(--focus)}
-    .drawer .cta{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .drawer .cta a{
-      justify-content:center;
-      margin-top:0;
+      color:rgba(242,243,246,.9);
+      font-weight:800;
     }
 
     .hero{
       position:relative;
-      padding: 52px 0 26px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 22px;
-      align-items:stretch;
-    }
-
-    .hero-left{
-      border-radius: var(--radius2);
-      border: 1px solid rgba(255,255,255,.10);
-      background:
-        radial-gradient(900px 300px at 20% 10%, rgba(177,18,23,.22), transparent 60%),
-        radial-gradient(700px 320px at 90% 30%, rgba(255,90,98,.10), transparent 55%),
-        linear-gradient(180deg, rgba(18,22,34,.78), rgba(15,18,24,.62));
-      box-shadow: var(--shadow);
-      padding: 26px;
-      overflow:hidden;
-      position:relative;
-    }
-
-    .hero-left::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background:
-        radial-gradient(800px 240px at 15% 10%, rgba(255,90,98,.16), transparent 60%),
-        radial-gradient(600px 240px at 85% 25%, rgba(111,10,13,.12), transparent 58%);
-      pointer-events:none;
-      filter: blur(10px);
-      opacity:.9;
-    }
-
-    .hero-left > *{position:relative}
-
-    .hero h1{
-      margin: 14px 0 10px;
-      font-size: clamp(30px, 4.3vw, 52px);
-      line-height:1.02;
-      letter-spacing: .4px;
-    }
-
-    .hero p{
-      margin: 0 0 18px;
-      font-size: 16px;
-      color: rgba(233,236,246,.86);
-      max-width: 58ch;
-    }
-
-    .hero-ctas{
+      min-height:760px;
       display:flex;
-      gap: 10px;
-      flex-wrap:wrap;
       align-items:center;
-      margin-top: 8px;
-    }
-
-    .hero-mini{
-      margin-top: 18px;
-      display:flex;
-      gap: 10px;
-      flex-wrap:wrap;
-    }
-    .chip{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.18);
-      color: rgba(233,236,246,.9);
-      font-size: 13px;
-    }
-    .chip svg{opacity:.9}
-
-    .hero-right{
-      border-radius: var(--radius2);
-      border: 1px solid rgba(255,255,255,.10);
-      background:
-        linear-gradient(180deg, rgba(18,22,34,.70), rgba(15,19,32,.58));
-      box-shadow: var(--shadow);
       overflow:hidden;
-      position:relative;
+      border-bottom:1px solid rgba(255,255,255,.08);
     }
-
-    .slats{
+    .hero-bg{
       position:absolute;
       inset:0;
+      z-index:-3;
       background:
-        linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.35)),
-        repeating-linear-gradient(
-          180deg,
-          rgba(255,255,255,.06) 0px,
-          rgba(255,255,255,.06) 14px,
-          rgba(0,0,0,.00) 14px,
-          rgba(0,0,0,.00) 30px
-        );
-      opacity:.9;
+        linear-gradient(90deg, rgba(7,8,11,.56), rgba(7,8,11,.26) 44%, rgba(7,8,11,.68)),
+        url("assets/hero-bg.png") center / cover no-repeat;
+      transform:scale(1.01);
+    }
+    .hero-shade{
+      position:absolute;
+      inset:0;
+      z-index:-2;
+      background:
+        radial-gradient(760px 340px at 28% 50%, rgba(211,15,24,.16), transparent 62%),
+        linear-gradient(180deg, rgba(7,8,11,.08), rgba(7,8,11,.64) 82%, var(--bg));
+    }
+    .hero:before,
+    .hero:after{
+      content:"";
+      position:absolute;
+      width:420px;
+      height:2px;
+      background:linear-gradient(90deg, transparent, rgba(255,59,69,.95), transparent);
+      box-shadow:0 0 34px rgba(211,15,24,.7);
+      opacity:.75;
       pointer-events:none;
     }
+    .hero:before{left:-80px;bottom:140px;transform:rotate(42deg)}
+    .hero:after{right:-70px;top:160px;transform:rotate(-42deg)}
 
-    .hero-card{
-      position:relative;
-      height:100%;
-      padding: 22px;
-      display:flex;
-      flex-direction:column;
-      gap: 14px;
-      justify-content:space-between;
+    .hero-content{
+      width:100%;
+      padding:76px 0 92px;
     }
-
-    .hero-card .kpi{
+    .hero-box{
+      max-width:760px;
+      padding:30px;
+      border-radius:var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(180deg, rgba(9,11,15,.64), rgba(9,11,15,.42));
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(14px);
+    }
+    .hero-logo{
+      width:min(420px, 82vw);
+      margin-bottom:18px;
+      filter:drop-shadow(0 24px 48px rgba(0,0,0,.75)) drop-shadow(0 0 24px rgba(211,15,24,.16));
+    }
+    h1{
+      margin:16px 0 14px;
+      font-size:clamp(38px, 6vw, 78px);
+      line-height:.94;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      font-weight:950;
+    }
+    .lead{
+      margin:0;
+      color:rgba(242,243,246,.86);
+      font-size:clamp(16px, 2vw, 20px);
+      max-width:680px;
+    }
+    .hero-ctas{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
+    }
+    .hero-stats{
       display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+      margin-top:22px;
     }
-    .kpi .box{
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.15);
-      padding: 14px 14px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+    .stat{
+      padding:16px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.045);
     }
-    .kpi .box strong{
+    .stat strong{
       display:block;
-      font-size: 18px;
-      margin-bottom: 4px;
+      font-size:24px;
+      line-height:1;
+      letter-spacing:1px;
     }
-    .kpi .box span{
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .hero-card .callout{
-      border-radius: 18px;
-      border: 1px solid rgba(177,18,23,.28);
-      background:
-        radial-gradient(500px 120px at 20% 10%, rgba(255,90,98,.14), transparent 60%),
-        rgba(0,0,0,.18);
-      padding: 14px 14px;
-    }
-    .callout .row{
-      display:flex;
-      gap: 10px;
-      align-items:flex-start;
-    }
-    .callout p{
-      margin: 0;
-      color: rgba(233,236,246,.86);
-      font-size: 14px;
-    }
-    .callout .small{
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 12px;
+    .stat span{
+      display:block;
+      margin-top:6px;
+      color:var(--muted);
+      font-size:13px;
     }
 
     section{
-      padding: 32px 0;
+      padding:72px 0;
     }
-
     .section-head{
       display:flex;
-      align-items:flex-end;
+      align-items:end;
       justify-content:space-between;
-      gap: 14px;
-      margin-bottom: 16px;
+      gap:20px;
+      margin-bottom:22px;
     }
     .section-head h2{
       margin:0;
-      font-size: 22px;
-      letter-spacing:.2px;
+      font-size:clamp(30px, 4vw, 48px);
+      line-height:1;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      font-weight:950;
     }
     .section-head p{
-      margin:0;
-      color: var(--muted);
-      font-size: 14px;
-      max-width: 60ch;
+      margin:10px 0 0;
+      color:var(--muted);
+      max-width:720px;
+      font-size:15px;
     }
 
     .grid-3{
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
     }
-
     .grid-2{
       display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
+      grid-template-columns:repeat(2, 1fr);
+      gap:16px;
     }
 
     .card{
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,.10);
-      background:
-        radial-gradient(700px 220px at 10% 0%, rgba(177,18,23,.10), transparent 60%),
-        linear-gradient(180deg, rgba(18,22,34,.70), rgba(15,18,24,.55));
-      box-shadow: var(--shadow2);
-      padding: 18px;
-      overflow:hidden;
       position:relative;
+      overflow:hidden;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.11);
+      background:
+        radial-gradient(360px 180px at 22% 0%, rgba(211,15,24,.13), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+      box-shadow:var(--shadow2);
+      padding:24px;
+      min-height:100%;
     }
-
-    .card::after{
+    .card:before{
       content:"";
       position:absolute;
-      right:-80px;
-      top:-80px;
-      width:200px;
-      height:200px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,90,98,.16), transparent 60%);
-      filter: blur(8px);
-      opacity:.8;
+      inset:0;
       pointer-events:none;
+      background:linear-gradient(135deg, rgba(255,255,255,.10), transparent 32%, rgba(211,15,24,.06));
+      opacity:.6;
     }
-
+    .card > *{position:relative}
     .card h3{
-      margin: 10px 0 6px;
-      font-size: 16px;
+      margin:14px 0 8px;
+      font-size:21px;
+      line-height:1.15;
     }
     .card p{
-      margin: 0;
-      color: rgba(233,236,246,.82);
-      font-size: 14px;
+      margin:0;
+      color:rgba(242,243,246,.80);
+      font-size:15px;
     }
 
     .icon{
-      width:42px;height:42px;
-      border-radius: 14px;
-      border:1px solid rgba(177,18,23,.18);
-      background:
-        radial-gradient(400px 140px at 30% 10%, rgba(255,90,98,.18), transparent 60%),
-        rgba(0,0,0,.18);
+      width:50px;
+      height:50px;
+      border-radius:18px;
       display:grid;
       place-items:center;
-      box-shadow: 0 14px 26px rgba(0,0,0,.35);
-    }
-    .icon svg{
-      width:22px;height:22px;
-      fill: url(#gfill);
-      opacity:.98;
+      border:1px solid rgba(211,15,24,.32);
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,.20), transparent 56%),
+        linear-gradient(135deg, rgba(211,15,24,.22), rgba(80,5,8,.18));
+      box-shadow:0 18px 38px rgba(0,0,0,.32), 0 0 28px rgba(211,15,24,.12);
+      color:#fff;
+      font-size:22px;
     }
 
-    .gallery{
+    .service-list{
       display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
+      gap:10px;
+      margin-top:16px;
     }
-    .shot{
-      grid-column: span 4;
-      min-height: 180px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,.10);
+    .service-list span{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:rgba(242,243,246,.84);
+      font-size:14px;
+    }
+    .service-list span:before{
+      content:"";
+      width:7px;
+      height:7px;
+      border-radius:99px;
+      margin-top:7px;
+      background:var(--red);
+      box-shadow:0 0 18px rgba(255,59,69,.75);
+      flex:0 0 auto;
+    }
+
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+    }
+    .price-card{
+      position:relative;
+      border-radius:26px;
+      border:1px solid rgba(255,255,255,.13);
       background:
-        linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.36)),
-        radial-gradient(800px 260px at 20% 10%, rgba(177,18,23,.14), transparent 60%),
-        radial-gradient(800px 260px at 90% 30%, rgba(255,90,98,.08), transparent 60%),
-        repeating-linear-gradient(135deg, rgba(255,255,255,.05) 0px, rgba(255,255,255,.05) 10px, rgba(0,0,0,.00) 10px, rgba(0,0,0,.00) 24px);
-      box-shadow: var(--shadow2);
+        radial-gradient(440px 220px at 20% 0%, rgba(211,15,24,.12), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+      padding:24px;
+      min-height:276px;
+      overflow:hidden;
+      box-shadow:var(--shadow2);
+    }
+    .price-card.featured{
+      border-color:rgba(255,59,69,.65);
+      box-shadow:0 0 0 1px rgba(211,15,24,.28), 0 26px 70px rgba(211,15,24,.16), var(--shadow2);
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--red), var(--red2));
+      border:1px solid rgba(255,255,255,.14);
+      color:#fff;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.3px;
+      box-shadow:0 14px 34px rgba(211,15,24,.25);
+      margin-bottom:12px;
+    }
+    .price-card h3{
+      margin:0 0 14px;
+      font-size:20px;
+      line-height:1.15;
+    }
+    .price{
+      display:flex;
+      align-items:flex-end;
+      gap:10px;
+      margin:10px 0 12px;
+      padding:12px 0;
+      border-top:1px solid rgba(255,255,255,.10);
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .price strong{
+      font-size:42px;
+      line-height:.95;
+      letter-spacing:1px;
+    }
+    .price small{
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:4px;
+      white-space:nowrap;
+    }
+    .price-card p{
+      margin:0;
+      color:rgba(242,243,246,.78);
+      font-size:14px;
+    }
+
+    .visuals{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      align-items:start;
+    }
+    .visual-card{
+      border-radius:var(--radius2);
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background:#0b0d12;
+      box-shadow:var(--shadow);
+    }
+    .visual-card img{
+      width:100%;
+      height:auto;
+    }
+    .visual-caption{
+      padding:15px 18px;
+      color:var(--muted);
+      font-size:14px;
+      border-top:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.025);
+    }
+
+    .process{
+      counter-reset:step;
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:14px;
+    }
+    .step{
+      counter-increment:step;
+      padding:22px;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,.11);
+      background:rgba(255,255,255,.04);
+      min-height:190px;
+      box-shadow:var(--shadow2);
       position:relative;
       overflow:hidden;
     }
-    .shot span{
-      position:absolute;
-      left:14px;
-      bottom:14px;
-      font-size: 13px;
-      color: rgba(233,236,246,.92);
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.18);
-      padding: 8px 10px;
-      border-radius: 999px;
-      backdrop-filter: blur(10px);
+    .step:before{
+      content:"0" counter(step);
+      display:block;
+      margin-bottom:18px;
+      font-size:14px;
+      color:var(--red3);
+      font-weight:950;
+      letter-spacing:2px;
     }
+    .step h3{margin:0 0 8px;font-size:18px}
+    .step p{margin:0;color:var(--muted);font-size:14px}
 
-    .quote{
-      display:flex;
-      gap: 12px;
-      align-items:flex-start;
-    }
-    .quote .avatar{
-      width:42px;height:42px;border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.20);
-      display:grid;place-items:center;
-      box-shadow: 0 12px 26px rgba(0,0,0,.30);
-      flex:0 0 auto;
-    }
-    .quote .avatar svg{width:18px;height:18px;opacity:.9}
-    .quote p{margin:0}
-    .quote .name{
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .faq{
+    .contact-wrap{
       display:grid;
-      gap: 10px;
-    }
-    details{
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(18,22,34,.40);
-      box-shadow: var(--shadow2);
-      overflow:hidden;
-    }
-    summary{
-      cursor:pointer;
-      padding: 14px 16px;
-      list-style:none;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-      font-size: 14px;
-      color: rgba(233,236,246,.92);
-    }
-    summary::-webkit-details-marker{display:none}
-    .chev{
-      width:34px;height:34px;border-radius: 12px;
-      display:grid;place-items:center;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.14);
-      flex:0 0 auto;
-      transition: transform .18s var(--ease);
-    }
-    details[open] .chev{transform: rotate(180deg)}
-    details .content{
-      padding: 0 16px 14px;
-      color: rgba(233,236,246,.82);
-      font-size: 14px;
-    }
-
-    .contact{
-      display:grid;
-      grid-template-columns: .95fr 1.05fr;
-      gap: 14px;
+      grid-template-columns:1fr .9fr;
+      gap:16px;
       align-items:stretch;
     }
-    .contact .info a{
+    .contact-panel{
+      border-radius:var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(520px 240px at 20% 0%, rgba(211,15,24,.16), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.065), rgba(255,255,255,.025));
+      box-shadow:var(--shadow);
+      padding:30px;
+      overflow:hidden;
+    }
+    .contact-panel h2{
+      margin:0 0 12px;
+      font-size:clamp(30px, 4vw, 50px);
+      line-height:1;
+      text-transform:uppercase;
+    }
+    .contact-panel p{
+      color:rgba(242,243,246,.82);
+      margin:0 0 20px;
+      max-width:62ch;
+    }
+    .contact-items{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+    .contact-item{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      padding:14px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.16);
       text-decoration:none;
     }
-
-    .list{
+    .contact-item b{display:block}
+    .contact-item span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+    .contact-ico{
+      width:42px;
+      height:42px;
+      border-radius:15px;
       display:grid;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .li{
-      display:flex;
-      gap: 12px;
-      align-items:flex-start;
-      padding: 12px 12px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.12);
-    }
-    .li .mini-ico{
-      width:36px;height:36px;border-radius: 14px;
-      border: 1px solid rgba(177,18,23,.18);
-      background: rgba(0,0,0,.14);
-      display:grid;place-items:center;
+      place-items:center;
+      background:linear-gradient(135deg, rgba(211,15,24,.26), rgba(255,255,255,.045));
+      border:1px solid rgba(211,15,24,.25);
       flex:0 0 auto;
-      box-shadow: 0 10px 22px rgba(0,0,0,.30);
     }
-    .li .mini-ico svg{width:16px;height:16px;opacity:.95}
-    .li strong{display:block; font-size: 13px}
-    .li span{display:block; color: var(--muted); font-size: 13px; margin-top: 2px}
 
-    .map{
-      border-radius: var(--radius2);
-      overflow:hidden;
-      border: 1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadow);
-      min-height: 360px;
-      background: rgba(0,0,0,.16);
+    form{
+      display:grid;
+      gap:12px;
     }
-    .map iframe{
+    label{
+      display:grid;
+      gap:7px;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:800;
+    }
+    input,textarea{
       width:100%;
-      height:100%;
-      border:0;
-      display:block;
-      filter: grayscale(20%) contrast(110%) brightness(95%);
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.20);
+      color:var(--text);
+      border-radius:18px;
+      padding:14px 15px;
+      outline:none;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
     }
+    input:focus,textarea:focus{
+      border-color:rgba(255,59,69,.65);
+      box-shadow:0 0 0 4px rgba(211,15,24,.14);
+    }
+    textarea{min-height:150px;resize:vertical}
+    .note{color:var(--muted);font-size:12px;margin-top:4px}
 
     footer{
-      padding: 26px 0 38px;
-      border-top: 1px solid rgba(255,255,255,.08);
-      background: rgba(0,0,0,.10);
+      border-top:1px solid rgba(255,255,255,.08);
+      padding:28px 0 40px;
+      background:rgba(0,0,0,.14);
     }
-    .foot{
+    .footer-inner{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 14px;
       flex-wrap:wrap;
+      gap:14px;
+      color:var(--muted);
+      font-size:13px;
     }
-    .foot small{
-      color: var(--muted);
-    }
-    .foot a{
-      color: rgba(233,236,246,.86);
+    .footer-inner a{
+      color:rgba(242,243,246,.86);
       text-decoration:none;
-      border-bottom: 1px dashed rgba(177,18,23,.45);
+      border-bottom:1px dashed rgba(211,15,24,.45);
     }
-    .foot a:hover{color:#fff}
 
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns: 1fr; }
-      .hero-right{min-height: 360px}
-      .grid-3{grid-template-columns: 1fr 1fr}
-      .contact{grid-template-columns: 1fr}
-      .gallery{gap: 12px}
-      .shot{grid-column: span 6}
-    }
-    @media (max-width: 720px){
+    @media (max-width:1040px){
       .navlinks{display:none}
-      .hamburger{display:inline-grid; place-items:center}
-      .drawer{display:none}
-      .drawer.open{display:block}
-      .grid-3{grid-template-columns: 1fr}
-      .grid-2{grid-template-columns: 1fr}
-      .shot{grid-column: span 12}
-      .hero{padding-top: 28px}
-      .hero-left{padding: 20px}
-      .hero-card{padding: 18px}
-      .brand-title span{display:none}
+      .menu-btn{display:grid}
+      .hero{min-height:690px}
+      .grid-3,.pricing-grid{grid-template-columns:repeat(2,1fr)}
+      .process{grid-template-columns:repeat(2,1fr)}
+      .contact-wrap{grid-template-columns:1fr}
+    }
+
+    @media (max-width:720px){
+      :root{--pad:16px}
+      .nav{min-height:68px}
+      .brand-mark{width:48px;height:48px}
+      .brand-mark img{width:43px;height:43px}
+      .brand-text span{display:none}
+      .nav-actions .btn{display:none}
+      .hero{
+        min-height:auto;
+        align-items:flex-start;
+      }
+      .hero-bg{
+        background-position:center top;
+        opacity:.72;
+      }
+      .hero-content{padding:38px 0 58px}
+      .hero-box{
+        padding:20px;
+        border-radius:26px;
+      }
+      .hero-logo{width:260px}
+      h1{font-size:42px}
+      .lead{font-size:16px}
+      .hero-stats{grid-template-columns:1fr}
+      .section-head{
+        display:block;
+      }
+      section{padding:50px 0}
+      .grid-3,.grid-2,.pricing-grid,.visuals,.process{grid-template-columns:1fr}
+      .price strong{font-size:38px}
+      .contact-panel{padding:22px}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      *{transition:none!important}
     }
   </style>
 </head>
@@ -725,409 +793,342 @@
 <body>
   <a class="skip-link" href="#main">Przejdź do treści</a>
 
-  <svg width="0" height="0" style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true" focusable="false">
-    <defs>
-      <linearGradient id="gfill" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#ff5a62"/>
-        <stop offset="0.55" stop-color="#b11217"/>
-        <stop offset="1" stop-color="#6f0a0d"/>
-      </linearGradient>
-    </defs>
-  </svg>
-
   <header>
     <div class="container">
-      <div class="topbar">
-        <div class="brand" aria-label="WESKO">
-          <div class="brand-logo" title="Logo WESKO">
-            <img src="assets/wesko-logo.png" alt="WESKO logo" onerror="this.style.display='none'; this.parentElement.innerHTML = '<strong class=&quot;gold&quot; style=&quot;font-size:18px;letter-spacing:1px&quot;>W</strong>';">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="WESKO">
+          <span class="brand-mark">
+            <img src="assets/logo-wesko.png" alt="Logo WESKO" />
+          </span>
+          <span class="brand-text">
+            <strong class="metal">WESKO</strong>
+            <span>Nowoczesne strony • Social media • Usługi IT</span>
+          </span>
+        </a>
 
-          </div>
-          <div class="brand-title">
-            <strong class="gold">WESKO</strong>
-            <span>Rolety i Żaluzje • Zamość</span>
-          </div>
-        </div>
-
-        <nav aria-label="Nawigacja">
-          <div class="navlinks">
-            <a href="#oferta">Oferta</a>
-            <a href="#realizacje">Realizacje</a>
-            <a href="#opinie">Opinie</a>
-            <a href="#faq">FAQ</a>
-            <a href="#kontakt">Kontakt</a>
-          </div>
-
-          <div class="actions">
-            <a class="btn" href="tel:+48663438606" aria-label="Zadzwoń 663 438 606">
-              <span class="gold">Zadzwoń</span>
-              <span aria-hidden="true">📞</span>
-            </a>
-            <a class="btn btn-primary" href="#kontakt">
-              <span class="gold">Darmowa wycena</span>
-              <span aria-hidden="true">✨</span>
-            </a>
-            <button class="hamburger" id="hamburger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="drawer">
-              <span></span>
-            </button>
-          </div>
+        <nav class="navlinks" aria-label="Nawigacja główna">
+          <a href="#oferta">Oferta</a>
+          <a href="#pakiety">Pakiety</a>
+          <a href="#grafiki">Grafiki</a>
+          <a href="#proces">Proces</a>
+          <a href="#kontakt">Kontakt</a>
         </nav>
+
+        <div class="nav-actions">
+          <a class="btn" href="mailto:weskozamosc@gmail.com">Napisz</a>
+          <a class="btn btn-primary" href="#kontakt">Darmowa wycena</a>
+          <button class="menu-btn" id="menuBtn" aria-label="Otwórz menu" aria-expanded="false" aria-controls="drawer"><span></span></button>
+        </div>
       </div>
 
       <div class="drawer" id="drawer">
-        <a href="#oferta">Oferta <span aria-hidden="true">→</span></a>
-        <a href="#realizacje">Realizacje <span aria-hidden="true">→</span></a>
-        <a href="#opinie">Opinie <span aria-hidden="true">→</span></a>
-        <a href="#faq">FAQ <span aria-hidden="true">→</span></a>
-        <a href="#kontakt">Kontakt <span aria-hidden="true">→</span></a>
-        <div class="cta">
-          <a class="btn" href="tel:+48663438606">Zadzwoń</a>
-          <a class="btn btn-primary" href="#kontakt"><span class="gold">Wycena</span></a>
-        </div>
+        <a href="#oferta">Oferta <span>→</span></a>
+        <a href="#pakiety">Pakiety <span>→</span></a>
+        <a href="#grafiki">Grafiki <span>→</span></a>
+        <a href="#proces">Proces <span>→</span></a>
+        <a href="#kontakt">Kontakt <span>→</span></a>
       </div>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" aria-label="Wstęp">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-left">
-            <div class="badge" role="note" aria-label="Info">
-              <span class="dot" aria-hidden="true"></span>
-              <span>Premium montaż • Pomiar i doradztwo • Zamość i okolice</span>
-            </div>
+    <section class="hero" id="top" aria-label="WESKO — strona główna">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
 
-            <h1>
-              <span class="gold">WESKO</span><br/>
-              Rolety i Żaluzje w stylu premium
-            </h1>
+      <div class="container hero-content">
+        <div class="hero-box">
+          <img class="hero-logo" src="assets/logo-wesko.png" alt="WESKO" />
+          <span class="badge">Nowoczesne usługi B2B dla firm</span>
+
+          <h1><span class="metal">Strony internetowe</span><br><span class="red">social media</span> i IT</h1>
+
+          <p class="lead">
+            Pomagam małym firmom wyglądać profesjonalnie w internecie: tworzę i modernizuję strony,
+            prowadzę podstawową administrację, przygotowuję posty oraz wspieram w prostych sprawach technicznych.
+          </p>
+
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#pakiety">Zobacz pakiety</a>
+            <a class="btn" href="#oferta">Co robię?</a>
+            <a class="btn" href="mailto:weskozamosc@gmail.com?subject=Oferta%20WESKO%20dla%20firmy">Wyślij maila</a>
+          </div>
+
+          <div class="hero-stats" aria-label="Najważniejsze atuty">
+            <div class="stat">
+              <strong class="metal">WWW</strong>
+              <span>strony firmowe, wizytówki i modernizacje</span>
+            </div>
+            <div class="stat">
+              <strong class="metal">SM</strong>
+              <span>posty, grafiki i podstawowe prowadzenie profilu</span>
+            </div>
+            <div class="stat">
+              <strong class="metal">IT</strong>
+              <span>konfiguracja, naprawy i wsparcie techniczne</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="oferta" aria-label="Oferta WESKO">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2><span class="metal">Oferta</span></h2>
+            <p>Prosto, konkretnie i bez agencyjnego lania wody. Usługi dopasowane pod lokalne firmy, które chcą wyglądać lepiej i zdobywać więcej zapytań.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">⌘</div>
+            <h3>Strony internetowe</h3>
+            <p>Nowa strona dla firmy, landing page, wizytówka, większa prezentacja oferty albo poprawa obecnej strony.</p>
+            <div class="service-list">
+              <span>nowoczesny wygląd na telefonie i komputerze</span>
+              <span>sekcje: oferta, kontakt, realizacje, mapka, CTA</span>
+              <span>podstawowe SEO i szybkie ładowanie</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="icon">◆</div>
+            <h3>Modernizacja strony</h3>
+            <p>Odświeżenie starej strony tak, żeby wyglądała czytelniej, bardziej premium i lepiej prowadziła klienta do kontaktu.</p>
+            <div class="service-list">
+              <span>poprawa układu, tekstów i zdjęć</span>
+              <span>naprawa formularzy, linków i błędów</span>
+              <span>lepszy wygląd mobile</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="icon">●</div>
+            <h3>Social media</h3>
+            <p>Regularne posty dla firm, które chcą być widoczne, ale nie mają czasu samodzielnie ogarniać Facebooka.</p>
+            <div class="service-list">
+              <span>teksty i proste grafiki</span>
+              <span>dobór zdjęć i publikacja postów</span>
+              <span>podstawowe hashtagi i CTA</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="icon">◈</div>
+            <h3>Administracja strony</h3>
+            <p>Stała opieka nad stroną: drobne poprawki, aktualizacja treści, zdjęć, formularzy i danych kontaktowych.</p>
+            <div class="service-list">
+              <span>zmiany w treści i ofercie</span>
+              <span>kontrola podstawowych elementów strony</span>
+              <span>spokojna obsługa bez szukania wykonawcy od zera</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="icon">✦</div>
+            <h3>Usługi IT</h3>
+            <p>Pomoc techniczna dla małych firm: komputery, konfiguracje, podstawowe naprawy, doradztwo i modernizacje sprzętu.</p>
+            <div class="service-list">
+              <span>naprawa i konfiguracja komputerów</span>
+              <span>składanie i modernizacja PC</span>
+              <span>wsparcie w codziennych problemach technicznych</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="icon">★</div>
+            <h3>Pakiety dla firm</h3>
+            <p>Najwygodniej: połączenie administracji strony i social mediów w jednym miesięcznym pakiecie.</p>
+            <div class="service-list">
+              <span>jedna osoba do strony i postów</span>
+              <span>stały miesięczny koszt</span>
+              <span>zakres dopasowany do firmy</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pakiety" aria-label="Pakiety i cennik">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2><span class="metal">Pakiety</span> <span class="red">WESKO</span></h2>
+            <p>Ceny startowe — dokładna wycena zależy od zakresu prac, liczby podstron, materiałów i stanu obecnej strony.</p>
+          </div>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Poprawki strony</h3>
+            <div class="price"><strong class="metal">300 zł</strong><small>od</small></div>
+            <p>Drobne zmiany: teksty, zdjęcia, dane kontaktowe, linki i pojedyncze elementy.</p>
+          </article>
+
+          <article class="price-card">
+            <h3>Odświeżenie strony</h3>
+            <div class="price"><strong class="metal">700 zł</strong><small>od</small></div>
+            <p>Lekkie odświeżenie wyglądu i treści, żeby strona była bardziej aktualna i czytelna.</p>
+          </article>
+
+          <article class="price-card featured">
+            <span class="tag">★ Najlepsza oferta</span>
+            <h3>Kompleksowa modernizacja</h3>
+            <div class="price"><strong class="metal">1500 zł</strong><small>od</small></div>
+            <p>Przerobienie starej strony praktycznie od nowa: układ, wygląd, mobile, treści i podstawowe SEO.</p>
+          </article>
+
+          <article class="price-card">
+            <h3>Strona START / wizytówka</h3>
+            <div class="price"><strong class="metal">1800 zł</strong><small>od</small></div>
+            <p>Prosta strona dla małej firmy: oferta, kontakt, formularz, mapa Google i wersja mobilna.</p>
+          </article>
+
+          <article class="price-card">
+            <h3>Strona firmowa</h3>
+            <div class="price"><strong class="metal">2500 zł</strong><small>od</small></div>
+            <p>Pełniejsza strona z kilkoma podstronami, ofertą, galerią lub realizacjami oraz kontaktem.</p>
+          </article>
+
+          <article class="price-card">
+            <h3>Strona premium / rozbudowana</h3>
+            <div class="price"><strong class="metal">3000 zł</strong><small>od</small></div>
+            <p>Rozbudowana prezentacja firmy: więcej sekcji, kilka podstron, lepszy wygląd, FAQ i podstawowe SEO.</p>
+          </article>
+        </div>
+
+        <div style="height:16px"></div>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Administracja START</h3>
+            <div class="price"><strong class="metal">300 zł</strong><small>/ miesiąc</small></div>
+            <p>Podstawowa opieka nad stroną: drobne poprawki, aktualizacja treści, zdjęć i danych.</p>
+          </article>
+
+          <article class="price-card">
+            <h3>Social media — 2 posty tygodniowo</h3>
+            <div class="price"><strong class="metal">500 zł</strong><small>/ miesiąc</small></div>
+            <p>8 postów miesięcznie: teksty, prosta grafika lub dobór zdjęcia, publikacja i podstawowe hashtagi.</p>
+          </article>
+
+          <article class="price-card featured">
+            <span class="tag">★ Najlepsza oferta</span>
+            <h3>Pakiet START Online</h3>
+            <div class="price"><strong class="metal">700 zł</strong><small>/ miesiąc</small></div>
+            <p>Administracja strony + 8 postów miesięcznie. Najtańszy sensowny pakiet dla firmy.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="grafiki" aria-label="Grafiki ofertowe">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2><span class="metal">Gotowe grafiki</span></h2>
+            <p>Te grafiki możesz wrzucić do maila, oferty, posta lub PDF-a. Na stronie działają jako sekcja cennika i materiał sprzedażowy.</p>
+          </div>
+        </div>
+
+        <div class="visuals">
+          <figure class="visual-card">
+            <img src="assets/pricing-once.png" alt="WESKO — usługi jednorazowe" loading="lazy" />
+            <figcaption class="visual-caption">Usługi jednorazowe: poprawki, odświeżenie, modernizacja i tworzenie stron.</figcaption>
+          </figure>
+
+          <figure class="visual-card">
+            <img src="assets/pricing-monthly.png" alt="WESKO — pakiety miesięczne" loading="lazy" />
+            <figcaption class="visual-caption">Pakiety miesięczne: administracja strony i social media dla firm.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="proces" aria-label="Jak wygląda współpraca">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2><span class="metal">Jak działam?</span></h2>
+            <p>Prosty proces, żeby klient od razu wiedział, co dostaje i ile to potrwa.</p>
+          </div>
+        </div>
+
+        <div class="process">
+          <article class="step">
+            <h3>Krótka rozmowa</h3>
+            <p>Ustalamy, czego firma potrzebuje: strony, modernizacji, postów czy opieki.</p>
+          </article>
+
+          <article class="step">
+            <h3>Zakres i wycena</h3>
+            <p>Podaję konkretny zakres prac i cenę startową lub miesięczną.</p>
+          </article>
+
+          <article class="step">
+            <h3>Realizacja</h3>
+            <p>Przygotowuję stronę, poprawki, grafiki albo posty — bez zbędnego komplikowania.</p>
+          </article>
+
+          <article class="step">
+            <h3>Poprawki i start</h3>
+            <p>Dopieszczamy szczegóły i uruchamiamy gotowy materiał dla firmy.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" aria-label="Kontakt z WESKO">
+      <div class="container">
+        <div class="contact-wrap">
+          <div class="contact-panel">
+            <span class="badge">Kontakt</span>
+            <h2><span class="metal">Porozmawiajmy</span><br><span class="red">o Twojej firmie</span></h2>
             <p>
-              Robimy to prosto: przyjeżdżamy, mierzymy, doradzamy i montujemy.
-              Ciemny, elegancki efekt — <span class="gold">czerwone detale</span>, perfekcyjna estetyka i porządek po robocie.
+              Napisz, czy chodzi o nową stronę, poprawę obecnej, prowadzenie social mediów czy pomoc IT.
+              Odpiszę konkretnie i zaproponuję najrozsądniejszy zakres.
             </p>
 
-            <div class="hero-ctas">
-              <a class="btn btn-primary" href="#kontakt"><span class="gold">Umów pomiar</span> 📐</a>
-              <a class="btn" href="#oferta">Zobacz ofertę ✨</a>
-              <a class="btn" href="mailto:weskozamosc@gmail.com">Napisz ✉️</a>
-            </div>
+            <div class="contact-items">
+              <a class="contact-item" href="mailto:weskozamosc@gmail.com">
+                <span class="contact-ico">✉</span>
+                <span><b>Mail</b><span>weskozamosc@gmail.com</span></span>
+              </a>
 
-            <div class="hero-mini" aria-label="Atuty">
-              <span class="chip" title="Szybki termin">
-                <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="url(#gfill)" d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 11h5v-2h-4V7h-2v6a1 1 0 0 0 1 1Z"/></svg>
-                Szybkie terminy
-              </span>
-              <span class="chip" title="Dokładny montaż">
-                <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="url(#gfill)" d="M9 16.2 4.8 12 3.4 13.4 9 19l12-12-1.4-1.4Z"/></svg>
-                Dokładny montaż
-              </span>
-              <span class="chip" title="Gwarancja i serwis">
-                <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="url(#gfill)" d="M12 2 4 5v6c0 5.55 3.84 10.74 8 11 4.16-.26 8-5.45 8-11V5Zm0 18c-2.82-.64-6-4.48-6-9V6.3l6-2.25 6 2.25V11c0 4.52-3.18 8.36-6 9Z"/></svg>
-                Gwarancja & serwis
-              </span>
+              <a class="contact-item" href="#pakiety">
+                <span class="contact-ico">◆</span>
+                <span><b>Najlepszy start</b><span>Pakiet START Online — administracja + 8 postów miesięcznie</span></span>
+              </a>
+
+              <a class="contact-item" href="#grafiki">
+                <span class="contact-ico">★</span>
+                <span><b>Materiały ofertowe</b><span>Gotowe grafiki jednorazowe i miesięczne</span></span>
+              </a>
             </div>
           </div>
 
-          <div class="hero-right" aria-label="Panel informacyjny">
-            <div class="slats" aria-hidden="true"></div>
-            <div class="hero-card">
-              <div>
-                <div class="kpi" aria-label="Wyróżniki">
-                  <div class="box">
-                    <strong class="gold">Pomiar</strong>
-                    <span>na miejscu + doradztwo</span>
-                  </div>
-                  <div class="box">
-                    <strong class="gold">Montaż</strong>
-                    <span>czysto i bez stresu</span>
-                  </div>
-                  <div class="box">
-                    <strong class="gold">Estetyka</strong>
-                    <span>premium wykończenie</span>
-                  </div>
-                  <div class="box">
-                    <strong class="gold">Kontakt</strong>
-                    <span>telefon / mail / mapa</span>
-                  </div>
-                </div>
+          <div class="contact-panel">
+            <form id="leadForm">
+              <label>
+                Imię / firma
+                <input name="name" type="text" placeholder="Np. Firma XYZ" required />
+              </label>
 
-                <div style="height:14px"></div>
+              <label>
+                Kontakt
+                <input name="contact" type="text" placeholder="Telefon lub e-mail" required />
+              </label>
 
-                <div class="callout" aria-label="Szybki kontakt">
-                  <div class="row">
-                    <div style="font-size:18px" aria-hidden="true">⚡</div>
-                    <div>
-                      <p><strong>Najlepiej złapiesz mnie telefonicznie:</strong> <a href="tel:+48663438606" class="gold" style="text-decoration:none">663 438 606</a></p>
-                      <div class="small">Godziny: zależnie od montaży — dzwoń śmiało, oddzwonię.</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <label>
+                Czego potrzebujesz?
+                <textarea name="message" placeholder="Np. modernizacja strony, prowadzenie Facebooka, nowa strona firmowa..." required></textarea>
+              </label>
 
-              <div style="display:flex;gap:10px;flex-wrap:wrap">
-                <a class="btn btn-primary" href="#kontakt"><span class="gold">Wycena</span> ✨</a>
-                <a class="btn" href="#realizacje">Realizacje 🖼️</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="oferta" aria-label="Oferta">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Oferta</h2>
-            <p>Dobieramy rozwiązanie pod wnętrze i potrzeby. Ciemny styl, czerwone detale — premium efekt.</p>
-          </div>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 4h16v2H4V4Zm0 14h16v2H4v-2Zm2-10h12v2H6V8Zm0 4h12v2H6v-2Z"/></svg>
-            </div>
-            <h3><span class="gold">Rolety</span> (dzień/noc, zaciemniające)</h3>
-            <p>Minimalistyczny wygląd, świetna kontrola światła i prywatności. Pomagamy dobrać tkaninę i kolor.</p>
-          </article>
-
-          <article class="card">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M6 3h2v18H6V3Zm5 0h2v18h-2V3Zm5 0h2v18h-2V3Z"/></svg>
-            </div>
-            <h3><span class="gold">Żaluzje</span> (aluminium / drewnopodobne)</h3>
-            <p>Klasyka w premium wydaniu. Precyzyjne ustawienie kąta lameli i świetny efekt wizualny.</p>
-          </article>
-
-          <article class="card">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4V6Zm2 2v8h12V8H6Zm3 1h2v6H9V9Zm4 0h2v6h-2V9Z"/></svg>
-            </div>
-            <h3><span class="gold">Moskitiery</span> i dodatki</h3>
-            <p>Komfort na lato: okna i drzwi balkonowe. Doradzimy najlepszą konstrukcję do Twojego domu.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="realizacje" aria-label="Realizacje">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Realizacje</h2>
-            <p>Tu wstawisz swoje zdjęcia (podmieniasz kafelki na prawdziwe foty). Układ gotowy pod portfolio.</p>
-          </div>
-          <a class="btn" href="#kontakt">Chcesz podobnie? ✨</a>
-        </div>
-
-        <div class="gallery" aria-label="Galeria realizacji">
-          <div class="shot"><span>Rolety dzień/noc • salon</span></div>
-          <div class="shot"><span>Żaluzje • kuchnia</span></div>
-          <div class="shot"><span>Zaciemniające • sypialnia</span></div>
-          <div class="shot"><span>Moskitiery • balkon</span></div>
-          <div class="shot"><span>Rolety • biuro</span></div>
-          <div class="shot"><span>Żaluzje • nowoczesne wnętrze</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="opinie" aria-label="Opinie klientów">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Opinie</h2>
-            <p>Wklej tu realne opinie z FB/Google (krótkie, konkretne). Na start daję przykładowe.</p>
-          </div>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="quote">
-              <div class="avatar" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path fill="url(#gfill)" d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.42 0-8 2-8 4.5V21h16v-2.5C20 16 16.42 14 12 14Z"/></svg>
-              </div>
-              <div>
-                <p>„Szybko, czysto i perfekcyjnie. Rolety siedzą równo, a efekt jest mega premium.”</p>
-                <div class="name">— Klientka, Zamość</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="quote">
-              <div class="avatar" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path fill="url(#gfill)" d="M3 21v-2a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v2H3Zm8-8a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm6-4h2v2h-2V9Zm-2-4h4v2h-4V5Z"/></svg>
-              </div>
-              <div>
-                <p>„Doradztwo top — dobrali żaluzje pod kolor wnętrza. Montaż bez problemów.”</p>
-                <div class="name">— Klient, okolice Zamościa</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="quote">
-              <div class="avatar" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path fill="url(#gfill)" d="M12 2 2 7v6c0 5 4 9.7 10 10 6-.3 10-5 10-10V7l-10-5Zm-1 16-4-4 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 9Z"/></svg>
-              </div>
-              <div>
-                <p>„Wreszcie ktoś robi to estetycznie. Wszystko wyczyszczone po montażu.”</p>
-                <div class="name">— Klientka, Zamość</div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" aria-label="Najczęstsze pytania">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>FAQ</h2>
-            <p>Najczęstsze pytania — prosto i konkretnie.</p>
-          </div>
-        </div>
-
-        <div class="faq">
-          <details>
-            <summary>
-              Ile trwa pomiar i wycena?
-              <span class="chev" aria-hidden="true">⌄</span>
-            </summary>
-            <div class="content">
-              Zwykle 15–30 minut (zależnie od liczby okien). Doradztwo + wstępna wycena na miejscu.
-            </div>
-          </details>
-
-          <details>
-            <summary>
-              Jak szybko możecie zamontować?
-              <span class="chev" aria-hidden="true">⌄</span>
-            </summary>
-            <div class="content">
-              To zależy od typu osłon i dostępności materiałów — najszybciej dogadamy telefonicznie.
-            </div>
-          </details>
-
-          <details>
-            <summary>
-              Czy dojeżdżacie poza Zamość?
-              <span class="chev" aria-hidden="true">⌄</span>
-            </summary>
-            <div class="content">
-              Tak, Zamość i okolice. Napisz/dzwoń — ustalimy szczegóły.
-            </div>
-          </details>
-
-          <details>
-            <summary>
-              Czy pomagacie dobrać kolor i styl?
-              <span class="chev" aria-hidden="true">⌄</span>
-            </summary>
-            <div class="content">
-              Tak — dobieramy do wnętrza i potrzeb: zaciemnienie, prywatność, styl premium, łatwe czyszczenie.
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section id="kontakt" aria-label="Kontakt">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Kontakt</h2>
-            <p>Zadzwoń albo napisz — odpowiem i umówimy pomiar. Klikalne dane na telefonie.</p>
-          </div>
-          <a class="btn btn-primary" href="tel:+48663438606"><span class="gold">663 438 606</span> 📞</a>
-        </div>
-
-        <div class="contact">
-          <div class="card info">
-            <h3><span class="gold">WESKO</span> — Rolety i Żaluzje</h3>
-            <p>Pomiar • Doradztwo • Montaż • Zamość i okolice</p>
-
-            <div class="list" aria-label="Dane kontaktowe">
-              <div class="li">
-                <div class="mini-ico" aria-hidden="true">
-                  <svg viewBox="0 0 24 24"><path fill="url(#gfill)" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.72 11.72 0 0 0 3.68.59 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A18 18 0 0 1 4 6a1 1 0 0 1 1-1h2.47a1 1 0 0 1 1 1 11.72 11.72 0 0 0 .59 3.68 1 1 0 0 1-.24 1.03Z"/></svg>
-                </div>
-                <div>
-                  <strong>Telefon</strong>
-                  <span><a class="gold" href="tel:+48663438606">663 438 606</a></span>
-                </div>
-              </div>
-
-              <div class="li">
-                <div class="mini-ico" aria-hidden="true">
-                  <svg viewBox="0 0 24 24"><path fill="url(#gfill)" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"/></svg>
-                </div>
-                <div>
-                  <strong>E-mail</strong>
-                  <span><a class="gold" href="mailto:weskozamosc@gmail.com">weskozamosc@gmail.com</a></span>
-                </div>
-              </div>
-
-              <div class="li">
-                <div class="mini-ico" aria-hidden="true">
-                  <svg viewBox="0 0 24 24"><path fill="url(#gfill)" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5Z"/></svg>
-                </div>
-                <div>
-                  <strong>Adres</strong>
-                  <span>Lubelska 36c, 22-400 Zamość</span>
-                </div>
-              </div>
-            </div>
-
-            <div style="height:14px"></div>
-
-            <div class="card" style="padding:14px; background: rgba(0,0,0,.12);">
-              <p style="margin:0; font-size:14px;">
-                <strong class="gold">Szybka wiadomość:</strong><br/>
-                Napisz czego potrzebujesz (ile okien, jaka roleta/żaluzja, miasto) — odpiszę z propozycją.
-              </p>
-
-              <form id="leadForm" style="margin-top:12px; display:grid; gap:10px;">
-                <label style="display:grid; gap:6px;">
-                  <span style="color:var(--muted); font-size:13px;">Imię</span>
-                  <input name="name" required placeholder="Np. Szymon"
-                    style="padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.10); background: rgba(18,22,34,.35); color: var(--text); outline:none;"
-                  />
-                </label>
-
-                <label style="display:grid; gap:6px;">
-                  <span style="color:var(--muted); font-size:13px;">Telefon lub e-mail</span>
-                  <input name="contact" required placeholder="Np. 663 000 000 / mail@..."
-                    style="padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.10); background: rgba(18,22,34,.35); color: var(--text); outline:none;"
-                  />
-                </label>
-
-                <label style="display:grid; gap:6px;">
-                  <span style="color:var(--muted); font-size:13px;">Wiadomość</span>
-                  <textarea name="msg" required rows="4" placeholder="Np. rolety dzień/noc, 5 okien, Zamość..."
-                    style="padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.10); background: rgba(18,22,34,.35); color: var(--text); outline:none; resize:vertical;"
-                  ></textarea>
-                </label>
-
-                <button class="btn btn-primary" type="submit">
-                  <span class="gold">Wyślij</span> ✨
-                </button>
-
-                <div id="formNote" style="color:var(--muted); font-size:12px;"></div>
-              </form>
-            </div>
-          </div>
-
-          <div class="map" aria-label="Mapa Google Zamość">
-            <iframe
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Lubelska%2036c%2022-400%20Zamo%C5%9B%C4%87&output=embed"
-              title="Mapa: Lubelska 36c, 22-400 Zamość">
-            </iframe>
+              <button class="btn btn-primary" type="submit">Wyślij zapytanie mailowo</button>
+              <div class="note" id="formNote">Formularz otworzy gotowego maila do WESKO.</div>
+            </form>
           </div>
         </div>
       </div>
@@ -1135,82 +1136,73 @@
   </main>
 
   <footer>
-    <div class="container">
-      <div class="foot">
-        <div style="display:flex;align-items:center;gap:10px">
-          <div style="width:10px;height:10px;border-radius:99px;background:linear-gradient(120deg,var(--gold1),var(--gold2),var(--gold3)); box-shadow:0 0 0 3px rgba(177,18,23,.14)"></div>
-          <small>© <span id="year"></span> WESKO — Rolety i Żaluzje • Zamość</small>
-        </div>
-        <small>
-          Kontakt: <a href="tel:+48663438606">663 438 606</a> • <a href="mailto:weskozamosc@gmail.com">weskozamosc@gmail.com</a>
-        </small>
-      </div>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> WESKO — nowoczesne usługi B2B dla firm</div>
+      <div><a href="mailto:weskozamosc@gmail.com">weskozamosc@gmail.com</a></div>
     </div>
   </footer>
 
   <script>
     (function(){
-      const year = document.getElementById('year');
+      const year = document.getElementById("year");
       if(year) year.textContent = new Date().getFullYear();
 
-      const hamburger = document.getElementById('hamburger');
-      const drawer = document.getElementById('drawer');
+      const btn = document.getElementById("menuBtn");
+      const drawer = document.getElementById("drawer");
 
-      function setOpen(isOpen){
-        if(!drawer || !hamburger) return;
-        drawer.classList.toggle('open', isOpen);
-        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      function setMenu(open){
+        if(!btn || !drawer) return;
+        drawer.classList.toggle("open", open);
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
       }
 
-      if(hamburger && drawer){
-        hamburger.addEventListener('click', () => {
-          const isOpen = drawer.classList.contains('open');
-          setOpen(!isOpen);
+      if(btn && drawer){
+        btn.addEventListener("click", function(){
+          setMenu(!drawer.classList.contains("open"));
         });
 
-        drawer.querySelectorAll('a[href^="#"]').forEach(a => {
-          a.addEventListener('click', () => setOpen(false));
+        drawer.querySelectorAll("a").forEach(function(link){
+          link.addEventListener("click", function(){ setMenu(false); });
         });
 
-        document.addEventListener('keydown', (e) => {
-          if(e.key === 'Escape') setOpen(false);
+        document.addEventListener("keydown", function(e){
+          if(e.key === "Escape") setMenu(false);
         });
       }
 
-      const form = document.getElementById('leadForm');
-      const note = document.getElementById('formNote');
+      const form = document.getElementById("leadForm");
+      const note = document.getElementById("formNote");
 
-      function safe(v){ return (v || '').toString().trim(); }
+      function clean(value){
+        return String(value || "").trim();
+      }
 
       if(form){
-        form.addEventListener('submit', (e) => {
+        form.addEventListener("submit", function(e){
           e.preventDefault();
 
           const data = new FormData(form);
-          const name = safe(data.get('name'));
-          const contact = safe(data.get('contact'));
-          const msg = safe(data.get('msg'));
+          const name = clean(data.get("name"));
+          const contact = clean(data.get("contact"));
+          const message = clean(data.get("message"));
 
-          if(!name || !contact || !msg){
+          if(!name || !contact || !message){
             if(note) note.textContent = "Uzupełnij wszystkie pola.";
             return;
           }
 
-          const subject = encodeURIComponent("WESKO — zapytanie o rolety/żaluzje");
+          const subject = encodeURIComponent("Zapytanie o usługi WESKO");
           const body = encodeURIComponent(
-            "Imię: " + name + "\n" +
+            "Imię / firma: " + name + "\n" +
             "Kontakt: " + contact + "\n\n" +
-            "Wiadomość:\n" + msg + "\n\n" +
+            "Wiadomość:\n" + message + "\n\n" +
             "— wysłane ze strony WESKO"
           );
 
-          const mailto = "mailto:weskozamosc@gmail.com?subject=" + subject + "&body=" + body;
+          window.location.href = "mailto:weskozamosc@gmail.com?subject=" + subject + "&body=" + body;
 
-          if(note) note.innerHTML = "Otwieram e-mail… jeśli się nie otworzy, skopiuj tekst i wyślij ręcznie.";
-          window.location.href = mailto;
-
+          if(note) note.textContent = "Otwieram gotowego maila. Jeżeli poczta się nie otworzy, napisz ręcznie na weskozamosc@gmail.com.";
           form.reset();
-          setTimeout(() => { if(note) note.textContent = ""; }, 6000);
         });
       }
     })();
