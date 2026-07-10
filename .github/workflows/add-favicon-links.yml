@@ -1,0 +1,51 @@
+name: Add WESKO favicon links
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/add-favicon-links.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Add favicon and app icon metadata
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+          marker = '<link rel="icon" href="/favicon.svg" type="image/svg+xml">'
+          block = '''  <link rel="icon" href="/favicon.svg" type="image/svg+xml">\n  <link rel="shortcut icon" href="/favicon.svg">\n  <link rel="apple-touch-icon" href="https://oknazamosc.com.pl/wp-content/uploads/2026/07/Wesko.png">\n  <link rel="manifest" href="/site.webmanifest">\n  <meta name="apple-mobile-web-app-title" content="WESKO">\n'''
+
+          if marker not in html:
+              needle = '  <meta name="color-scheme" content="dark">\n'
+              if needle in html:
+                  html = html.replace(needle, needle + block, 1)
+              else:
+                  html = html.replace('</head>', block + '</head>', 1)
+              path.write_text(html, encoding='utf-8')
+              print('Favicon metadata added.')
+          else:
+              print('Favicon metadata already present.')
+          PY
+
+      - name: Commit change
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          if git diff --cached --quiet; then
+            echo 'No changes.'
+          else
+            git commit -m 'Dodaj mini logo WESKO przy uruchamianiu strony'
+            git push
+          fi
