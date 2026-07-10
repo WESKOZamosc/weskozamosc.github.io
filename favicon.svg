@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="WESKO">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111116"/>
+      <stop offset="1" stop-color="#050506"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff3f49"/>
+      <stop offset="1" stop-color="#a9070f"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="10" width="492" height="492" rx="92" fill="url(#bg)" stroke="#ffffff" stroke-opacity=".14" stroke-width="8"/>
+  <path d="M339-20h193v181L390 304l-84-69 90-82-57-48z" fill="url(#red)"/>
+  <text x="74" y="337" fill="#f7f7f8" font-family="Arial Black,Arial,sans-serif" font-size="248" font-weight="900" letter-spacing="-34">W</text>
+  <text x="271" y="337" fill="#ef1721" font-family="Arial Black,Arial,sans-serif" font-size="248" font-weight="900" letter-spacing="-20">S</text>
+  <rect x="88" y="392" width="336" height="20" rx="10" fill="#ef1721"/>
+</svg>
