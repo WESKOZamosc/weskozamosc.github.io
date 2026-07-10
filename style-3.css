@@ -9,3 +9,36 @@
     @media(max-width:500px){.hero-actions{grid-template-columns:1fr}.hero-actions .primary{grid-column:auto}.section{padding:62px 0}.tabs{border-radius:18px}.tab{border-radius:14px;font-size:11px}.project-shot{aspect-ratio:4/3}.browser-top{left:9px;right:9px;top:9px}.amount strong{font-size:34px}.footer-brand .brand-logo{width:132px;height:44px}.footer-brand .brand-logo img{width:132px}}
     @media(hover:none){.btn:hover,.service:hover,.project:hover,.step:hover,.price:hover,.hero-frame:hover{transform:none}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.reveal{opacity:1;transform:none}.ticker-track{animation:none}}
+
+    /* WESKO — punktowy polish zgodny z logo, bez zmiany struktury */
+    :root{--radius:17px;--radius-lg:24px;--shell:min(1740px,calc(100vw - clamp(28px,4vw,72px)))}
+    body{background:
+      radial-gradient(1050px 620px at 92% -10%,rgba(239,21,31,.12),transparent 66%),
+      radial-gradient(760px 500px at 2% 20%,rgba(239,21,31,.055),transparent 68%),
+      linear-gradient(180deg,#050506 0%,#09090b 48%,#050506 100%)}
+    body::after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.12;background:repeating-linear-gradient(135deg,transparent 0 46px,rgba(255,255,255,.018) 46px 47px,transparent 47px 94px);mask-image:linear-gradient(to bottom,#000,transparent 86%)}
+    .section-title{font-size:clamp(38px,4.55vw,74px);letter-spacing:-.055em}.section-lead{max-width:68ch}
+    .eyebrow{min-height:32px;padding:7px 11px;border-radius:7px;border-left:2px solid var(--red);background:linear-gradient(90deg,rgba(239,21,31,.085),rgba(255,255,255,.025));letter-spacing:.16em}
+    .eyebrow::before{width:17px;height:2px;border-radius:0;box-shadow:0 0 12px rgba(239,21,31,.8)}
+    .btn{position:relative;overflow:hidden;border-radius:10px;letter-spacing:.02em}.btn::after{content:"";position:absolute;right:-14px;top:-18px;width:22px;height:62px;background:rgba(255,255,255,.13);transform:rotate(31deg);transition:transform .25s var(--ease),background .25s}.btn:hover::after{transform:translateX(-4px) rotate(31deg);background:rgba(255,255,255,.2)}
+    .brand-logo{border-radius:8px;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));box-shadow:0 12px 34px rgba(0,0,0,.38),0 0 0 1px rgba(239,21,31,.08)}
+    .nav-links a{border-radius:0;text-transform:uppercase;letter-spacing:.07em;font-size:11px}.nav-links a:hover,.nav-links a.active{background:transparent}.nav-links a::after{left:13px;right:13px;bottom:4px;border-radius:0;transform-origin:left}.nav-links a:hover::after{transform:scaleX(1)}
+    .menu{border-radius:9px;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))}.mobile-nav a{border-radius:8px;border-left:2px solid rgba(239,21,31,.35);text-transform:uppercase;letter-spacing:.06em;font-size:12px}
+    .hero::after{content:"WS";position:absolute;right:-2vw;top:50%;z-index:-1;transform:translateY(-52%);font-size:min(29vw,510px);line-height:.8;font-weight:1000;letter-spacing:-.12em;color:rgba(255,255,255,.022);pointer-events:none;user-select:none}
+    .hero-grid{gap:clamp(42px,4.5vw,82px)}.hero-title{letter-spacing:-.067em}.hero-frame{border-radius:19px;box-shadow:0 50px 135px rgba(0,0,0,.6),0 0 0 1px rgba(239,21,31,.1),0 0 72px rgba(239,21,31,.08)}.hero-frame::after{content:"";position:absolute;inset:auto -8% 16% -8%;height:2px;background:linear-gradient(90deg,transparent,rgba(239,21,31,.8),transparent);transform:rotate(-8deg);box-shadow:0 0 18px rgba(239,21,31,.55);pointer-events:none}.browserbar{padding:11px 15px;text-transform:uppercase;letter-spacing:.08em;font-size:10px}
+    .proof{gap:8px}.proof div{border-radius:11px;border-top:1px solid rgba(239,21,31,.22);background:linear-gradient(180deg,rgba(255,255,255,.038),rgba(255,255,255,.022))}.float{border-radius:10px;border-left:2px solid rgba(239,21,31,.55)}
+    .pill{border-radius:7px;text-transform:uppercase;letter-spacing:.06em;font-size:11px}.pill::before{border-radius:0;transform:rotate(45deg)}
+    .service{border-radius:16px;border-top:1px solid rgba(239,21,31,.22);background:radial-gradient(420px 210px at 18% -8%,rgba(239,21,31,.105),transparent 64%),linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02))}.service::before{content:"";position:absolute;left:0;top:0;width:74px;height:2px;background:linear-gradient(90deg,var(--red),transparent);box-shadow:0 0 14px rgba(239,21,31,.5)}.service-icon{border-radius:10px;clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,9px 100%,0 calc(100% - 9px))}
+    .project{border-radius:20px;border-top:1px solid rgba(239,21,31,.2)}.project-shot::before{content:"";position:absolute;z-index:2;left:0;top:0;width:86px;height:3px;background:linear-gradient(90deg,var(--red),transparent);box-shadow:0 0 14px rgba(239,21,31,.5)}.tag{border-radius:7px}.step{border-radius:13px;border-top:1px solid rgba(239,21,31,.16)}
+    .pricing{border-radius:22px}.tabs{border-radius:11px}.tab{border-radius:8px;text-transform:uppercase;letter-spacing:.05em;font-size:11px}.price{border-radius:14px;border-top:1px solid rgba(239,21,31,.14)}.badge{border-radius:6px}.pricing-visual{border-radius:22px}.pricing-image{border-radius:15px}
+    .why-main,.why-side{border-radius:22px}.why-point{border-radius:11px;border-left:2px solid rgba(239,21,31,.28)}
+    .contact{border-radius:24px}.contact-info,.form-panel{border-radius:16px}.contact-link{border-radius:11px;border-left:2px solid rgba(239,21,31,.3)}.ico{border-radius:9px;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))}.field input,.field select,.field textarea{border-radius:10px}.mobile-bar{border-radius:12px}.lightbox-dialog{border-radius:18px}.close{border-radius:9px}
+    footer{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.32))}footer::after{content:"WS";position:absolute;right:-1%;bottom:-36%;font-size:220px;line-height:1;font-weight:1000;letter-spacing:-.12em;color:rgba(255,255,255,.018);pointer-events:none}.footer-links a{text-transform:uppercase;letter-spacing:.06em;font-size:10px}
+
+    @media(max-width:800px){
+      :root{--radius:14px;--radius-lg:19px}
+      .hero::after{right:-18vw;top:38%;font-size:68vw;color:rgba(255,255,255,.018)}
+      .brand-logo{border-radius:7px}.contact{border-radius:20px}.contact-info,.form-panel{border-radius:14px}.project{border-radius:16px}.pricing,.pricing-visual,.why-main,.why-side{border-radius:18px}
+      .section-title{font-size:clamp(36px,11vw,58px)}
+    }
+    @media(max-width:500px){.eyebrow{letter-spacing:.12em}.btn{border-radius:9px}.proof div{border-radius:9px}.service{border-radius:13px}.project{border-radius:14px}}
