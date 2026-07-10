@@ -5,11 +5,15 @@ const links=[...d.querySelectorAll(".nav-links a")],secs=links.map(a=>d.querySel
 d.querySelectorAll("[data-tab]").forEach(t=>t.addEventListener("click",()=>{d.querySelectorAll("[data-tab]").forEach(x=>x.setAttribute("aria-selected",String(x===t)));d.querySelectorAll("[data-panel]").forEach(x=>x.hidden=x.dataset.panel!==t.dataset.tab)}));
 const select=d.getElementById("service"),msg=d.getElementById("message");d.querySelectorAll("[data-service]").forEach(a=>a.addEventListener("click",()=>{select.value="Inne";if(!msg.value.trim())msg.value=`Interesuje mnie: ${a.dataset.service}. Proszę o informację o zakresie i wycenie.`}));
 
-/* Realizacje: lokalne zrzuty bez banerów cookies, bez paska z adresem i z większym kadrem strony. */
+/* Realizacje: większy kadr strony, bez paska adresu i bez widocznego banera cookies. */
 d.querySelectorAll(".browser-top").forEach(el=>el.remove());
 d.querySelectorAll(".project-shot").forEach(el=>{el.style.aspectRatio="3 / 2"});
 const localShots=["assets/realizacje/mako.png","assets/realizacje/hetman.png"];
-d.querySelectorAll(".live-shot").forEach((img,index)=>{const original=img.currentSrc||img.src;img.dataset.fallback=original;img.addEventListener("error",()=>{if(img.dataset.fallback){img.src=img.dataset.fallback;delete img.dataset.fallback}else img.src="https://oknazamosc.com.pl/wp-content/uploads/2026/07/fbbanner.png"},{once:false});if(localShots[index])img.src=localShots[index]});
+const cleanFallbacks=[
+  "https://image.thum.io/get/width/1800/crop/2200/noanimate/https://oknazamosc.com.pl/",
+  "https://image.thum.io/get/width/1800/crop/2200/noanimate/https://oknazamosc.com.pl/hetman/"
+];
+d.querySelectorAll(".live-shot").forEach((img,index)=>{img.dataset.fallback=cleanFallbacks[index]||img.src;img.addEventListener("error",()=>{if(img.dataset.fallback){img.src=img.dataset.fallback;delete img.dataset.fallback}else img.src="https://oknazamosc.com.pl/wp-content/uploads/2026/07/fbbanner.png"},{once:false});if(localShots[index])img.src=localShots[index]});
 
 const lb=d.getElementById("lightbox"),open=d.getElementById("openPrice"),close=d.getElementById("closePrice");const openLb=()=>{lb.classList.add("open");lb.setAttribute("aria-hidden","false");b.style.overflow="hidden";close.focus()},closeLb=()=>{lb.classList.remove("open");lb.setAttribute("aria-hidden","true");b.style.overflow=""};open.addEventListener("click",openLb);close.addEventListener("click",closeLb);lb.addEventListener("click",e=>{if(e.target===lb)closeLb()});
 d.addEventListener("keydown",e=>{if(e.key==="Escape"){setMenu(false);closeLb()}});
