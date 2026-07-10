@@ -17,7 +17,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Replace remote mockups with real responsive screenshots
+      - name: Force real responsive screenshots and bust cache
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -26,23 +26,32 @@ jobs:
           html = path.read_text(encoding='utf-8')
 
           replacements = {
-              'https://image.thum.io/get/width/430/crop/900/noanimate/https://oknazamosc.com.pl/hetman/': 'assets/realizacje/hetman-mobile.png',
-              'https://image.thum.io/get/width/430/crop/900/noanimate/https://oknazamosc.com.pl/': 'assets/realizacje/mako-mobile.png',
-              'https://s.wordpress.com/mshots/v1/https%3A%2F%2Foknazamosc.com.pl%2Fhetman%2F?w=1600': 'assets/realizacje/hetman-desktop.png',
-              'https://s.wordpress.com/mshots/v1/https%3A%2F%2Foknazamosc.com.pl%2F?w=1600': 'assets/realizacje/mako-desktop.png',
+              'assets/realizacje/hetman-mobile.png': 'assets/realizacje/hetman-mobile.png?v=real-mobile-20260710-2',
+              'assets/realizacje/mako-mobile.png': 'assets/realizacje/mako-mobile.png?v=real-mobile-20260710-2',
+              'assets/realizacje/hetman-desktop.png': 'assets/realizacje/hetman-desktop.png?v=desktop-20260710-2',
+              'assets/realizacje/mako-desktop.png': 'assets/realizacje/mako-desktop.png?v=desktop-20260710-2',
           }
 
-          changed = False
           for old, new in replacements.items():
-              if old in html:
-                  html = html.replace(old, new)
-                  changed = True
+              html = html.replace(old, new)
 
-          if not changed:
-              print('No matching remote preview URLs found.')
-          else:
-              path.write_text(html, encoding='utf-8')
-              print('Replaced preview URLs with local desktop/mobile screenshots.')
+          marker = '/* REAL MOBILE PREVIEWS V2 */'
+          mobile_css = r'''
+    /* REAL MOBILE PREVIEWS V2 */
+    .screen.phone{width:205px!important;right:0!important;bottom:4px!important;border:2px solid rgba(255,255,255,.20)!important;box-shadow:0 30px 86px rgba(0,0,0,.76),0 0 0 1px rgba(239,23,33,.16)!important}
+    .screen.desktop{right:118px!important}
+    .screen.phone::before,.case-phone::before{content:"MOBILE • 430 PX";position:absolute;z-index:5;left:50%;bottom:8px;transform:translateX(-50%);padding:4px 7px;border-radius:5px;background:rgba(5,5,7,.88);border:1px solid rgba(255,255,255,.16);color:#fff;font-size:7px;font-weight:900;letter-spacing:.08em;white-space:nowrap;pointer-events:none}
+    .case-phone{width:27%!important;min-width:150px!important;border:2px solid rgba(255,255,255,.18)!important;box-shadow:0 30px 82px rgba(0,0,0,.76),0 0 0 1px rgba(239,23,33,.14)!important}
+    .screen.phone img,.case-phone img{object-fit:cover!important;object-position:top center!important;width:100%!important;height:auto!important;aspect-ratio:430/900!important}
+    @media(max-width:860px){.screen.desktop{right:94px!important}.screen.phone{width:154px!important}.case-phone{min-width:125px!important}}
+    @media(max-width:540px){.screen.desktop{right:68px!important}.screen.phone{width:112px!important}.case-phone{min-width:96px!important}.screen.phone::before,.case-phone::before{font-size:6px;bottom:5px;padding:3px 5px}}
+'''
+
+          if marker not in html:
+              html = html.replace('</style>', mobile_css + '\n  </style>', 1)
+
+          path.write_text(html, encoding='utf-8')
+          print('Real mobile screenshots enabled with cache bust and larger phone frames.')
           PY
 
       - name: Commit patch
@@ -53,6 +62,6 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No changes to commit.'
           else
-            git commit -m 'Pokaż prawdziwe wersje mobilne realizacji'
+            git commit -m 'Wymuś prawdziwe podglądy wersji mobilnych'
             git push
           fi
